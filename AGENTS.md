@@ -178,7 +178,8 @@ edited in one place only.
 | `data/deadlines.yaml` | important dates | home + `/dates.html` |
 | `data/news.yaml` | news items, sorted by date in the template | home |
 | `data/committee.yaml` | `groups:` (committees) and `tpc:` | `/committees.html`, `/tpc_members.html` |
-| `data/sponsors.yaml` | sponsor name, logo, link | home |
+| `data/sponsors.yaml` | `technical:` and `sponsors:` groups, each with its own `enabled` switch | home |
+| `data/stats.yaml` | the four numbers under "Fifty years of ICAT" | home |
 
 Keynotes are the exception: each speaker is a file under
 `content/keynotes/` with YAML front matter, because each one gets its own page

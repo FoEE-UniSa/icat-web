@@ -6,34 +6,9 @@ title: "Welcome"
 <!-- About -->
 {{< section id="about" eyebrow="About the conference" heading="Fifty years of ICAT" lede="Founded in 1973 as a small symposium above Sarajevo, ICAT has grown into the region's longest-running conference in information, communication and automation technologies." alt="true" >}}
 
-Every October, researchers, practitioners and students from a dozen countries gather in Sarajevo to present original work, argue about it, and build the collaborations that outlast any single paper. The 31st edition runs three full days: plenary talks, parallel technical sessions, workshops, tutorials and a round table, all under one roof.
+ICAT brings researchers, practitioners and students from a dozen countries to Sarajevo to present original work, argue about it, and build the collaborations that outlast any single paper. The 31st edition runs three full days: plenary talks, parallel technical sessions, workshops, tutorials and a round table, all under one roof.
 
-<div class="row g-3 mt-4">
-<div class="col-md-3 col-6">
-<div class="icat-stat text-center">
-<div class="number">50+</div>
-<div class="label">years of ICAT</div>
-</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="icat-stat text-center">
-<div class="number">200+</div>
-<div class="label">participants</div>
-</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="icat-stat text-center">
-<div class="number">80+</div>
-<div class="label">papers per edition</div>
-</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="icat-stat text-center">
-<div class="number">4</div>
-<div class="label">technical tracks</div>
-</div>
-</div>
-</div>
+{{< stats >}}
 
 {{< /section >}}
 
@@ -83,20 +58,11 @@ Every October, researchers, practitioners and students from a dozen countries ga
 
 {{< /section >}}
 
-<!-- Sponsors -->
-{{< section id="sponsors" eyebrow="Supported by" heading="Technical co-sponsors" lede="ICAT 2027 is technically co-sponsored by IEEE societies and hosted by ETF Sarajevo." alt="true" >}}
+<!-- Sponsors: both groups are switchable in data/sponsors.yaml -->
+{{< sponsors-section >}}
 
-{{< sponsor-grid >}}
-
-<div class="icat-host text-center mt-5 pt-4">
-<div class="icat-section-eyebrow mb-2">Hosted by</div>
-<a href="http://www.etf.unsa.ba">
-<span class="fw-semibold fs-5 icat-host-name">Faculty of Electrical Engineering</span>
-<span class="d-block small">University of Sarajevo</span>
-</a>
-</div>
-
-{{< /section >}}
+<!-- Organizers -->
+{{< organizers >}}
 
 <!-- Call to action -->
 {{< section id="cta" >}}

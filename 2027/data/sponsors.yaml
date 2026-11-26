@@ -1,12 +1,27 @@
-- name: IEEE Control Systems Society
-  logo: images/IEEE-CSS_logo.png
-  url: http://ieeecss.org/
-- name: IEEE Industrial Electronics Society
-  logo: images/IEEE-IES_logo.png
-  url: https://www.ieee-ies.org/
-- name: IEEE Systems, Man and Cybernetics Society
-  logo: images/IEEE-SMC_logo.png
-  url: https://www.ieeesmc.org/
-- name: IEEE Bosnia and Herzegovina Section
-  logo: images/IEEE-BiH.png
-  url: https://www.ieee.org/
+# Sponsors and co-sponsors shown on the home page.
+# Each group has its own switch, so you can publish one without the other.
+# An empty group with enabled: true is skipped automatically.
+
+technical:
+  enabled: false
+  heading: "Technical co-sponsors"
+  lede: "ICAT 2027 is technically co-sponsored by IEEE societies."
+  items:
+    - name: IEEE Control Systems Society
+      logo: images/IEEE-CSS_logo.png
+      url: http://ieeecss.org/
+    - name: IEEE Industrial Electronics Society
+      logo: images/IEEE-IES_logo.png
+      url: https://www.ieee-ies.org/
+    - name: IEEE Systems, Man and Cybernetics Society
+      logo: images/IEEE-SMC_logo.png
+      url: https://www.ieeesmc.org/
+    - name: IEEE Bosnia and Herzegovina Section
+      logo: images/IEEE-BiH.png
+      url: https://www.ieee.org/
+
+sponsors:
+  enabled: false
+  heading: "Sponsors"
+  lede: "Industry partners supporting the 31st edition."
+  items: []

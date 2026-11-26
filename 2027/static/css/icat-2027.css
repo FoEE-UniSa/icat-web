@@ -927,11 +927,12 @@ section.icat-section-alt .card {
 }
 
 .icat-sponsor-grid img {
+    height: 64px;
+    width: 100%;
+    object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.7;
     transition: filter 0.25s ease, opacity 0.25s ease;
-    max-height: 68px;
-    width: auto;
 }
 
 .icat-sponsor-grid a:hover img {
@@ -941,6 +942,24 @@ section.icat-section-alt .card {
 
 .icat-host {
     border-top: 1px solid var(--icat-border);
+}
+
+.icat-section-slim {
+    padding: 2.75rem 0;
+}
+
+.icat-organizer .icat-host-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--icat-text);
+}
+
+.icat-organizer span.small {
+    color: var(--icat-text-muted);
+}
+
+.icat-organizer:hover .icat-host-name {
+    color: var(--icat-primary);
 }
 
 .icat-host-name {

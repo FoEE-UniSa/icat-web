@@ -1,0 +1,10 @@
+# Numbers shown on the home page. Add, remove or reorder freely —
+# the grid adapts to the number of entries.
+- value: "50+"
+  label: "years of ICAT"
+- value: "200+"
+  label: "participants"
+- value: "80+"
+  label: "papers per edition"
+- value: "4"
+  label: "technical tracks"

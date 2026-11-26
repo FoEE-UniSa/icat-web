@@ -1,0 +1,10 @@
+{{ $c := hugo.Data.conference }}
+<section class="icat-section icat-section-alt icat-section-slim" id="organizers">
+<div class="container text-center">
+<div class="icat-section-eyebrow mb-3">Organized by</div>
+<a href="{{ $c.hostUrl }}" class="icat-organizer">
+<span class="icat-host-name">{{ $c.hostName }}</span>
+<span class="d-block small">{{ $c.hostParent }}</span>
+</a>
+</div>
+</section>
