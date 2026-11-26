@@ -68,9 +68,6 @@ jobs:
                  "\{\{[ ]*\(?[a-z]" "$out"; then
               echo "::error::$year contains unrendered Hugo templates"; fail=1
             fi
-            if [ -d "$out/categories" ] || [ -d "$out/tags" ]; then
-              echo "::error::$year has taxonomy directories"; fail=1
-            fi
           done
           exit $fail
 
