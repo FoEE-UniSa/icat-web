@@ -3,6 +3,9 @@ public/
 resources/
 .hugo_build.lock
 
+# Built sites — produced by `make build` and by CI, never committed
+html/
+
 # OS noise
 .DS_Store
 Thumbs.db

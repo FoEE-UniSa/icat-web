@@ -1,0 +1,88 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.165.0"
+          extended: true
+
+      - name: Read Pages settings
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build editions
+        run: |
+          set -euo pipefail
+          for year in 2023 2025 2027; do
+            echo "::group::Hugo $year"
+            hugo --source "$year" \
+                 --minify --cleanDestinationDir \
+                 --baseURL "${{ steps.pages.outputs.base_url }}/$year/" \
+                 --destination "$PWD/dist/$year"
+            bash "$year/flatten.sh" "$PWD/dist/$year"
+            echo "::endgroup::"
+          done
+
+      - name: Add root files
+        run: |
+          set -euo pipefail
+          base_path="${{ steps.pages.outputs.base_path }}"
+          cp deploy/index.html dist/index.html
+          cp deploy/robots.txt dist/robots.txt
+          sed "s|__BASE__|${base_path}/|g" deploy/404.html > dist/404.html
+          touch dist/.nojekyll
+
+      - name: Check output
+        run: |
+          set -euo pipefail
+          fail=0
+          for year in 2023 2025 2027; do
+            out="dist/$year"
+            if [ ! -f "$out/index.html" ]; then
+              echo "::error::$year/index.html missing"; fail=1
+            fi
+            if grep -rq "<?php" "$out"; then
+              echo "::error::$year contains PHP"; fail=1
+            fi
+            if grep -rqE "\{\{[ ]*\(?[a-z]" "$out"; then
+              echo "::error::$year contains unrendered Hugo templates"; fail=1
+            fi
+          done
+          if [ -d dist/categories ] || [ -d dist/2027/categories ]; then
+            echo "::error::taxonomy directories leaked into the output"; fail=1
+          fi
+          exit $fail
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

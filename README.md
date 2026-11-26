@@ -10,13 +10,14 @@ One Hugo project per edition, all built into a single tree:
 2023/            Hugo source, ICAT 2023
 2025/            Hugo source, ICAT 2025
 2027/            Hugo source, ICAT 2027
-html/            build output — this is what gets published
-  2023/
-  2025/
-  2027/
+deploy/          files added to the root of the published site
+.github/         Pages deployment workflow
 Makefile         build, serve and check targets
 AGENTS.md        conventions for editing the sites
 ```
+
+Build output is **not** committed. `make build` writes it to `html/`, and CI
+rebuilds it on every push.
 
 ## Requirements
 
@@ -44,6 +45,28 @@ make serve-2027     # 2027 on :1315
 Note: `hugo server` keeps the un-flattened directory layout, so relative links
 break in the dev server. To preview exactly what ships, build first and serve
 `html/` with any static file server.
+
+## Deploy
+
+Pushing to `main` runs `.github/workflows/pages.yml`, which builds all three
+editions and publishes them with GitHub Pages:
+
+```
+/            → redirects to /2027/
+/2023/       → ICAT 2023
+/2025/       → ICAT 2025
+/2027/       → ICAT 2027
+```
+
+Pages must be enabled once in the repository settings, with **Source: GitHub
+Actions**.
+
+The `baseURL` passed to Hugo comes from `actions/configure-pages`, so the same
+sources work on `github.io/<repo>/` and on a custom domain without editing any
+config.
+
+Files in `deploy/` are copied to the site root during the build. `deploy/404.html`
+uses a `__BASE__` placeholder that CI replaces with the real base path.
 
 ## Checks
 

@@ -18,7 +18,7 @@ title: "Welcome"
 
 <div class="d-flex flex-wrap gap-2 mt-4 icat-hero-actions">
 <a href="calls.html" class="btn btn-primary btn-lg fw-semibold">Call for papers</a>
-<a href="registration.html" class="btn btn-outline-light btn-lg">Register</a>
+{{< register-cta >}}
 </div>
 </div>
 </div>

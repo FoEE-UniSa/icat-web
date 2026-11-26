@@ -8,14 +8,16 @@
 
     <title>{{ if .IsHome }}{{ .Site.Title }} · {{ .Site.Params.dates }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <link rel="canonical" href="{{ .Permalink }}">
+    {{- /* Hugo appends a trailing slash to file-style permalinks; strip it. */ -}}
+    {{ $canonical := .Permalink }}{{ if not .IsHome }}{{ $canonical = strings.TrimSuffix "/" .Permalink }}{{ end }}
+    <link rel="canonical" href="{{ $canonical }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}images/sarajevo.jpg">
+    <meta property="og:url" content="{{ $canonical }}">
+    <meta property="og:image" content="{{ strings.TrimSuffix "/" .Site.BaseURL }}/images/sarajevo.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="favicon.png" type="image/png">

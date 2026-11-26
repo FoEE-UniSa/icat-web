@@ -1,0 +1,6 @@
+# Staging deployment on github.io — keep search engines out until this copy
+# lives on icat.etf.unsa.ba. Then replace this file with:
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /
