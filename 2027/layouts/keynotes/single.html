@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $p := partial "rel-prefix.html" . }}
+<div class="icat-page">
+<section class="icat-section">
+<div class="container">
+<p class="mb-4"><a href="{{ $p }}keynotes.html" class="small"><i class="bi bi-arrow-left"></i> All speakers</a></p>
+<div class="row g-5">
+<div class="col-lg-8">
+<div class="icat-section-eyebrow">Keynote</div>
+<h1 class="icat-section-heading">{{ .Params.name | default .Title }}</h1>
+{{ if or .Params.role .Params.affiliation }}
+<p class="icat-speaker-meta">
+{{ with .Params.role }}{{ . }}{{ end }}{{ if and .Params.role .Params.affiliation }}<br>{{ end }}{{ with .Params.affiliation }}{{ . }}{{ end }}
+</p>
+{{ end }}
+{{ with .Params.talk }}<p class="lead fs-5"><em>{{ . }}</em></p>{{ end }}
+{{ if or .Params.website .Params.email }}
+<p class="small">
+{{ with .Params.website }}<a href="{{ . }}" class="me-3"><i class="bi bi-globe"></i> Website</a>{{ end }}
+{{ with .Params.email }}<a href="mailto:{{ . }}"><i class="bi bi-envelope"></i> Email</a>{{ end }}
+</p>
+{{ end }}
+<div class="icat-prose">
+{{ .Content }}
+</div>
+</div>
+{{ with .Params.photo }}
+<div class="col-lg-4 order-first order-lg-last">
+<img src="{{ $p }}{{ . }}" alt="" class="speaker-photo speaker-photo-lg">
+</div>
+{{ end }}
+</div>
+</div>
+</section>
+</div>
+{{ end }}

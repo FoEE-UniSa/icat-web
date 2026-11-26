@@ -1,0 +1,10 @@
+{{ $group := .Get "group" | default "groups" }}
+{{ range index hugo.Data.committee $group }}
+<div class="icat-committee">
+<h3 class="icat-committee-heading">{{ .heading }}</h3>
+<ul>
+{{ range .members }}<li><strong>{{ .name }}</strong>{{ with .affiliation }}, <span class="icat-affil">{{ . }}</span>{{ end }}</li>
+{{ end }}
+</ul>
+</div>
+{{ end }}

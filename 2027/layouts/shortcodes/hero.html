@@ -1,0 +1,29 @@
+{{ $c := hugo.Data.conference }}
+{{ $p := partial "rel-prefix.html" .Page }}
+<section class="icat-hero">
+<div class="container">
+<div class="row">
+<div class="col-lg-9">
+<div class="icat-hero-kicker">{{ $c.editionLabel }} International Conference</div>
+<h1>{{ .Site.Title }}</h1>
+<p class="lead">{{ $c.shortName }}. {{ $c.tagline }}</p>
+<p class="icat-hero-meta">
+<span><i class="bi bi-calendar3"></i>{{ $c.dates }}</span>
+<span><i class="bi bi-geo-alt"></i>{{ $c.city }}</span>
+</p>
+
+<div id="icat-countdown" class="icat-countdown" data-countdown="{{ $c.startDate }}T09:00:00+02:00">
+<div class="icat-countdown-unit"><div class="number">--</div><div class="label">Days</div></div>
+<div class="icat-countdown-unit"><div class="number">--</div><div class="label">Hours</div></div>
+<div class="icat-countdown-unit"><div class="number">--</div><div class="label">Minutes</div></div>
+<div class="icat-countdown-unit"><div class="number">--</div><div class="label">Seconds</div></div>
+</div>
+
+<div class="d-flex flex-wrap gap-2 mt-4 icat-hero-actions">
+<a href="{{ $p }}calls.html" class="btn btn-primary btn-lg fw-semibold">Call for papers</a>
+{{ if $c.registrationOpen }}<a href="{{ $p }}registration.html" class="btn btn-outline-light btn-lg">Register</a>{{ end }}
+</div>
+</div>
+</div>
+</div>
+</section>

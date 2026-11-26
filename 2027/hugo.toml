@@ -5,17 +5,17 @@ copyright = "© 2027 ICAT Conference Committee"
 # No category/tag pages, no RSS feed.
 disableKinds = ["taxonomy", "term", "RSS"]
 
-[params]
-  description = "31st International Conference on Information, Communication and Automation Technologies. 13–15 October 2027, Sarajevo, Bosnia and Herzegovina."
-  dates = "13–15 October 2027"
-  city = "Sarajevo, Bosnia and Herzegovina"
-  email = "icat@etf.unsa.ba"
-  # Flip to true when the registration form goes live; it unhides the navbar button.
-  registrationOpen = false
+# How many items of each kind the home page shows.
+[params.home]
+  keynotes = 3
+  news = 5
+  deadlines = 6
 
 # Flat output: content/foo.md → /2027/foo.html
+# Pages inside a content section keep the section in the path:
+# content/keynotes/foo.md → /2027/keynotes/foo.html
 [permalinks.page]
-  "/**" = "/:contentbasename.html"
+  "/**" = "/:sections/:contentbasename.html"
 
 [taxonomies]
 

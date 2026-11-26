@@ -1,69 +1,70 @@
+{{ $p := partial "rel-prefix.html" . }}
+{{ $c := hugo.Data.conference }}
 <footer class="icat-footer">
     <div class="container">
         <div class="row g-4 mb-4">
             <div class="col-lg-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="images/icat_logo.png" alt="" class="icat-logo-mono" width="30" height="28">
-                    <span class="icat-footer-brand">ICAT 2027</span>
+                    <img src="{{ $p }}images/icat_logo.png" alt="" class="icat-logo-mono" width="30" height="28">
+                    <span class="icat-footer-brand">ICAT {{ $c.year }}</span>
                 </div>
                 <p class="small mb-3">
-                    31st International Conference on Information, Communication and Automation Technologies.
+                    {{ $c.editionLabel }} {{ $c.name }}.
                 </p>
                 <p class="small mb-3">
-                    {{ .Site.Params.dates }}<br>
-                    Faculty of Electrical Engineering, University of Sarajevo
+                    {{ $c.dates }}<br>
+                    {{ $c.host }}
                 </p>
                 <div class="icat-social-links">
-                    <a href="mailto:{{ .Site.Params.email }}" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                    <a href="mailto:{{ $c.email }}" aria-label="Email"><i class="bi bi-envelope"></i></a>
                 </div>
             </div>
 
             <div class="col-6 col-lg-2">
                 <h6 class="mb-3">Program</h6>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="keynotes.html">Keynotes</a></li>
-                    <li class="mb-2"><a href="program.html">Schedule</a></li>
-                    <li class="mb-2"><a href="panels.html">Round Table</a></li>
-                    <li class="mb-2"><a href="workshops.html">Workshops</a></li>
-                    <li class="mb-2"><a href="tutorials.html">Tutorials</a></li>
+                    <li class="mb-2"><a href="{{ $p }}keynotes.html">Keynotes</a></li>
+                    <li class="mb-2"><a href="{{ $p }}program.html">Schedule</a></li>
+                    <li class="mb-2"><a href="{{ $p }}panels.html">Round Table</a></li>
+                    <li class="mb-2"><a href="{{ $p }}workshops.html">Workshops</a></li>
+                    <li class="mb-2"><a href="{{ $p }}tutorials.html">Tutorials</a></li>
                 </ul>
             </div>
 
             <div class="col-6 col-lg-2">
                 <h6 class="mb-3">Authors</h6>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="calls.html">Call for Papers</a></li>
-                    <li class="mb-2"><a href="dates.html">Important Dates</a></li>
-                    <li class="mb-2"><a href="submissions.html">Submission Guidelines</a></li>
-                    <li class="mb-2"><a href="presentations.html">Presentation Guidelines</a></li>
+                    <li class="mb-2"><a href="{{ $p }}calls.html">Call for Papers</a></li>
+                    <li class="mb-2"><a href="{{ $p }}dates.html">Important Dates</a></li>
+                    <li class="mb-2"><a href="{{ $p }}submissions.html">Submission Guidelines</a></li>
+                    <li class="mb-2"><a href="{{ $p }}presentations.html">Presentation Guidelines</a></li>
                 </ul>
             </div>
 
             <div class="col-6 col-lg-2">
                 <h6 class="mb-3">Attend</h6>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="registration.html">Registration</a></li>
-                    <li class="mb-2"><a href="venue.html">Conference Venue</a></li>
-                    <li class="mb-2"><a href="travel.html">Travel Info</a></li>
-                    <li class="mb-2"><a href="visas.html">Visa Information</a></li>
+                    <li class="mb-2"><a href="{{ $p }}registration.html">Registration</a></li>
+                    <li class="mb-2"><a href="{{ $p }}venue.html">Conference Venue</a></li>
+                    <li class="mb-2"><a href="{{ $p }}travel.html">Travel Info</a></li>
+                    <li class="mb-2"><a href="{{ $p }}visas.html">Visa Information</a></li>
                 </ul>
             </div>
 
             <div class="col-6 col-lg-2">
                 <h6 class="mb-3">Contact</h6>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><i class="bi bi-geo-alt"></i>Sarajevo, BiH</li>
-                    <li class="mb-2"><i class="bi bi-envelope"></i><a
-                            href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
-                    <li class="mb-2"><i class="bi bi-globe"></i><a href="http://icat.etf.unsa.ba">icat.etf.unsa.ba</a>
+                    <li class="mb-2"><i class="bi bi-geo-alt"></i>{{ $c.cityShort }}</li>
+                    <li class="mb-2"><i class="bi bi-envelope"></i><a href="mailto:{{ $c.email }}">{{ $c.email }}</a>
                     </li>
+                    <li class="mb-2"><i class="bi bi-globe"></i><a href="{{ $c.website }}">{{ $c.websiteLabel }}</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="icat-footer-legal">
-            <span>© 2027 ICAT Conference Committee</span>
-            <span><a href="about.html">About ICAT</a></span>
+            <span>© {{ $c.year }} ICAT Conference Committee</span>
+            <span><a href="{{ $p }}about.html">About ICAT</a></span>
         </div>
     </div>
 </footer>

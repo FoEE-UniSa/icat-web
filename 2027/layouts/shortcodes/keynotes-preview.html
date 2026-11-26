@@ -1,0 +1,8 @@
+{{ $section := .Site.GetPage "/keynotes" }}
+{{ $limit := .Site.Params.home.keynotes | default 3 }}
+{{ $page := .Page }}
+<div class="row g-4">
+{{ range first $limit $section.Pages.ByWeight }}
+{{ partial "keynote-card.html" (dict "page" $page "item" .) }}
+{{ end }}
+</div>

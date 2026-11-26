@@ -1,0 +1,20 @@
+{{ $limit := site.Params.home.news | default 5 }}
+<div class="icat-section-head reveal">
+<div class="icat-section-eyebrow">Latest</div>
+<h2 class="icat-section-heading">News &amp; updates</h2>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-9">
+<div class="list-group list-group-flush icat-news-list">
+{{ range first $limit hugo.Data.news }}
+<a href="{{ .link }}" class="list-group-item list-group-item-action py-3">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline gap-1 mb-1">
+<h5 class="mb-0">{{ .title }}</h5>
+<small class="icat-news-date text-nowrap"><i class="bi bi-calendar3"></i>{{ .date }}</small>
+</div>
+<p class="mb-0">{{ .description }}</p>
+</a>
+{{ end }}
+</div>
+</div>
+</div>

@@ -1,0 +1,180 @@
+groups:
+- heading: Honorary Chairs
+  members:
+  - name: Branislava Peruničić
+    affiliation: Academy of Sciences and Arts of Bosnia and Herzegovina / University of Sarajevo, BiH
+  - name: Asif Šabanović
+    affiliation: Academy of Sciences and Arts of Bosnia and Herzegovina / International University of Sarajevo, BiH
+- heading: General Chairs
+  members:
+  - name: Čedomir Stefanović
+    affiliation: Aalborg University, Denmark
+  - name: Predrag Spasojevic
+    affiliation: Rutgers University, USA
+  - name: Darijo Raca
+    affiliation: University of Sarajevo, BiH
+- heading: Technical Programme Chairs
+  members:
+  - name: Haris Gacanin
+    affiliation: RWTH Aachen, Germany
+  - name: Haris Vikalo
+    affiliation: University of Texas, USA
+  - name: Mirsad Cosovic
+    affiliation: University of Sarajevo, BiH
+- heading: Publications Chairs
+  members:
+  - name: Merim Dzaferagic
+    affiliation: Trinity College Dublin, Ireland
+  - name: Sead Delalic
+    affiliation: University of Sarajevo, BiH
+- heading: Finance Chair
+  members:
+  - name: Senad Huseinbegovic
+    affiliation: University of Sarajevo, BiH
+- heading: Local Arrangements Chair
+  members:
+  - name: Ernedin Zajko
+    affiliation: University of Sarajevo, BiH
+- heading: Steering Committee
+  members:
+  - name: Josep M. Guerrero
+    affiliation: Aalborg University, Denmark
+  - name: Miroslav Krstić
+    affiliation: University of California San Diego, USA
+  - name: Ljiljana Trajković
+    affiliation: Simon Fraser University, Canada
+  - name: Tarik Uzunovic
+    affiliation: University of Sarajevo, BiH
+  - name: Witold Pedrycz
+    affiliation: University of Alberta, Canada
+  - name: Petar Popovski
+    affiliation: Aalborg University, Denmark
+  - name: João P. S. Catalão
+    affiliation: University of Porto, Portugal
+  - name: Patrick Siarry
+    affiliation: Université Paris-Est Créteil, France
+  - name: Hamid Reza Karimi
+    affiliation: Politecnico di Milano, Italy
+  - name: Dragiša Mišković
+    affiliation: Institute for AI Research and Development of Serbia
+  - name: Abdulhamit Subasi
+    affiliation: University of Turku, Finland
+  - name: Antonella Ferrara
+    affiliation: University of Pavia, Italy
+  - name: Antonio Pascoal
+    affiliation: Instituto Superior Técnico (IST), Portugal
+  - name: Davor Svetinović
+    affiliation: Khalifa University, UAE
+  - name: Radu-Emil Precup
+    affiliation: Politehnica University of Timisoara, Romania
+  - name: Tomoyuki Shimono
+    affiliation: Yokohama National University, Japan
+  - name: Yasutaka Fujimoto
+    affiliation: Yokohama National University, Japan
+  - name: Zlatan Akšamija
+    affiliation: University of Utah, USA
+  - name: Emir Veledar
+    affiliation: Florida International University, USA
+  - name: Nizar Bouguila
+    affiliation: Concordia University, Canada
+  - name: Mehmed Kantardžić
+    affiliation: University of Louisville, USA
+  - name: Dejan Vukobratović
+    affiliation: University of Novi Sad, Serbia
+  - name: Stjepan Bogdan
+    affiliation: University of Zagreb, Croatia
+  - name: Costas Psychalinos
+    affiliation: University of Patras, Greece
+  - name: Erkay Savaş
+    affiliation: Sabanci University, Türkiye
+  - name: Jasmin Velagic
+    affiliation: University of Sarajevo, BiH
+  - name: Gordana Jovanović-Doleček
+    affiliation: National Institute of Astrophysics, Optics and Electronics, Mexico
+  - name: Jaroslav Koton
+    affiliation: Brno University of Technology, Czech Republic
+  - name: Andreas Nuechter
+    affiliation: Julius-Maximilians-University Würzburg, Germany
+  - name: Takahiro Nozaki
+    affiliation: Keio University, Japan
+  - name: Emre Sariyildiz
+    affiliation: University of Wollongong, Australia
+  - name: Kenta Seki
+    affiliation: Nagoya Institute of Technology, Japan
+tpc:
+- heading: TPC Members
+  members:
+  - name: Aida Brankovic
+    affiliation: CSIRO, Australia
+  - name: Adriana Lipovac
+    affiliation: University of Dubrovnik, Croatia
+  - name: Adnan Tahirovic
+    affiliation: University of Sarajevo, BiH
+  - name: Almir Maric
+    affiliation: University of Sarajevo, BiH
+  - name: Amra Halilovic
+    affiliation: University of Sarajevo, BiH
+  - name: Amina Seferagic
+    affiliation: International University of Sarajevo, BiH
+  - name: Anamaria Bjelopera
+    affiliation: University of Dubrovnik, Croatia
+  - name: Andrzej Bartoszewicz
+    affiliation: Lodz University of Technology, Poland
+  - name: Armin Teskeredzic
+    affiliation: RWTH Aachen, Germany
+  - name: Bakir Lacevic
+    affiliation: University of Sarajevo, BiH
+  - name: Charalampos Kalalas
+    affiliation: CTTC, Spain
+  - name: Enio Kaljic
+    affiliation: University of Sarajevo, BiH
+  - name: Hamza Merzic
+    affiliation: Google DeepMind, United Kingdom
+  - name: Kelvin Anoh
+    affiliation: University of Chichester, United Kingdom
+  - name: Kenan Turbic
+    affiliation: Fraunhofer Heinrich Hertz Institute HHI, Germany
+  - name: Merim Dzaferagic
+    affiliation: Trinity College Dublin, Ireland
+  - name: Merima Kulin
+    affiliation: EPO, The Netherlands
+  - name: Miguel Camelo
+    affiliation: IMEC, Belgium
+  - name: Milica Petković
+    affiliation: University of Novi Sad, Serbia
+  - name: Miodrag Forcan
+    affiliation: University of East Sarajevo, BiH
+  - name: Miralem Mehic
+    affiliation: University of Sarajevo, BiH
+  - name: Mirza Hamza
+    affiliation: University of Sarajevo, BiH
+  - name: Nina Slamnik-Krijestorac
+    affiliation: IMEC, Belgium
+  - name: Ognjen Kundačina
+    affiliation: Institute for AI Research and Development, Serbia
+  - name: Pamela Njemcevic
+    affiliation: University of Sarajevo, BiH
+  - name: Pasquale Coscia
+    affiliation: University of Milan, Italy
+  - name: Sead Delalic
+    affiliation: University of Sarajevo, BiH
+  - name: Senka Krivic
+    affiliation: University of Sarajevo, BiH
+  - name: Tarik Kazaz
+    affiliation: Optiver, Netherlands
+  - name: Tarik Uzunovic
+    affiliation: University of Sarajevo, BiH
+  - name: Tijana Devaja
+    affiliation: University of Novi Sad, Serbia
+  - name: Vukan Ninković
+    affiliation: University of Novi Sad, Serbia
+  - name: Zlatan Ajanovic
+    affiliation: RWTH Aachen, Germany
+  - name: Sihem Bakri
+    affiliation: Trinity College Dublin, Ireland
+  - name: Goksu Yamac
+    affiliation: Trinity College Dublin, Ireland
+  - name: Dmitrii Briantcev
+    affiliation: Trinity College Dublin, Ireland
+  - name: Suad Krilasevic
+    affiliation: ANNT, BiH

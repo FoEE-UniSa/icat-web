@@ -1,0 +1,24 @@
+- label: Paper submission opens
+  date: January 2027
+  variant: primary
+  note: Submit your manuscript through the online system.
+- label: Paper submission deadline
+  date: May 2027
+  variant: danger
+  note: <strong>Hard deadline</strong>, no extensions.
+- label: Notification of acceptance
+  date: July 2027
+  variant: success
+  note: Authors informed by email within four weeks.
+- label: Camera-ready manuscript
+  date: August 2027
+  variant: warning
+  note: Final version + IEEE PDF eXpress validation.
+- label: Author registration deadline
+  date: September 2027
+  variant: danger
+  note: At least one author per paper must register.
+- label: Conference opens
+  date: 13–15 October 2027
+  variant: primary
+  note: Three-day programme starts in Sarajevo.

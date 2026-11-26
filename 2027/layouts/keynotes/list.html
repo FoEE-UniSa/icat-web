@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="icat-page">
+<section class="icat-section">
+<div class="container">
+<div class="icat-section-head reveal">
+{{ with .Params.eyebrow }}<div class="icat-section-eyebrow">{{ . }}</div>{{ end }}
+<h1 class="icat-section-heading">{{ .Params.heading | default .Title }}</h1>
+{{ with .Params.lede }}<p class="icat-section-lede">{{ . }}</p>{{ end }}
+</div>
+<div class="icat-prose">
+{{ with .Params.intro }}<p>{{ . }}</p>{{ end }}
+</div>
+<div class="row g-4">
+{{ range .Pages.ByWeight }}
+{{ partial "keynote-card.html" (dict "page" $ "item" .) }}
+{{ end }}
+</div>
+{{ with .Content }}
+<div class="icat-prose mt-5">
+{{ . }}
+</div>
+{{ end }}
+</div>
+</section>
+</div>
+{{ end }}

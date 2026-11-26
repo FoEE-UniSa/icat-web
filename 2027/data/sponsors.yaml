@@ -1,0 +1,12 @@
+- name: IEEE Control Systems Society
+  logo: images/IEEE-CSS_logo.png
+  url: http://ieeecss.org/
+- name: IEEE Industrial Electronics Society
+  logo: images/IEEE-IES_logo.png
+  url: https://www.ieee-ies.org/
+- name: IEEE Systems, Man and Cybernetics Society
+  logo: images/IEEE-SMC_logo.png
+  url: https://www.ieeesmc.org/
+- name: IEEE Bosnia and Herzegovina Section
+  logo: images/IEEE-BiH.png
+  url: https://www.ieee.org/

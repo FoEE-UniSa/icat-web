@@ -1,0 +1,8 @@
+{{- /* Relative prefix from this page back to the site root.
+       Keeps every link path-relative so the site works from any base path
+       (github.io/<repo>/, a custom domain, or file://). */ -}}
+{{- $base := .Site.Home.RelPermalink -}}
+{{- $from := strings.TrimSuffix "/" (strings.TrimPrefix $base .RelPermalink) -}}
+{{- $depth := 0 -}}
+{{- if $from -}}{{- $depth = sub (len (split $from "/")) 1 -}}{{- end -}}
+{{- strings.Repeat $depth "../" -}}

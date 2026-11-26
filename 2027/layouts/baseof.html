@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo">
 
-    <title>{{ if .IsHome }}{{ .Site.Title }} · {{ .Site.Params.dates }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ $c := hugo.Data.conference }}
+    {{ $p := partial "rel-prefix.html" . }}
+    {{ $title := cond .IsHome (printf "%s · %s" .Site.Title $c.dates) (printf "%s · %s" .Title .Site.Title) }}
+    {{ $description := .Description | default $c.description }}
+
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}">
     {{- /* Hugo appends a trailing slash to file-style permalinks; strip it. */ -}}
     {{ $canonical := .Permalink }}{{ if not .IsHome }}{{ $canonical = strings.TrimSuffix "/" .Permalink }}{{ end }}
     <link rel="canonical" href="{{ $canonical }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical }}">
     <meta property="og:image" content="{{ strings.TrimSuffix "/" .Site.BaseURL }}/images/sarajevo.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="{{ $p }}favicon.png" type="image/png">
     <meta name="theme-color" content="#17191d">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +33,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/icat-2027.css" rel="stylesheet">
+    <link href="{{ $p }}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ $p }}vendor/bootstrap/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ $p }}css/icat-2027.css" rel="stylesheet">
 
     <script>
         // Apply theme and mark JS as available before first paint.
@@ -48,8 +53,8 @@
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
 
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/icat-2027.js"></script>
+    <script src="{{ $p }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ $p }}js/icat-2027.js"></script>
 </body>
 
 </html>

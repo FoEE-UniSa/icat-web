@@ -1,0 +1,8 @@
+{{- /* Link from .page to .target as a relative path.
+       Usage: partial "rel-url.html" (dict "page" . "target" $item) */ -}}
+{{- $base := .page.Site.Home.RelPermalink -}}
+{{- $from := strings.TrimSuffix "/" (strings.TrimPrefix $base .page.RelPermalink) -}}
+{{- $to := strings.TrimSuffix "/" (strings.TrimPrefix $base .target.RelPermalink) -}}
+{{- $depth := 0 -}}
+{{- if $from -}}{{- $depth = sub (len (split $from "/")) 1 -}}{{- end -}}
+{{- printf "%s%s" (strings.Repeat $depth "../") $to -}}

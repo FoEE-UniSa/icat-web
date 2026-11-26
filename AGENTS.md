@@ -166,6 +166,56 @@ Do not add new classes without checking the existing list first — many
 
 ---
 
+## 2027 site: data-driven content
+
+The 2027 project does not keep repeated records in markdown. They live in
+`2027/data/` and are rendered on every page that needs them, so a value is
+edited in one place only.
+
+| File | Holds | Used by |
+|------|-------|---------|
+| `data/conference.yaml` | year, edition, dates, city, host, email, `registrationOpen` | header, hero, footer, `<title>`, meta description |
+| `data/deadlines.yaml` | important dates | home + `/dates.html` |
+| `data/news.yaml` | news items, sorted by date in the template | home |
+| `data/committee.yaml` | `groups:` (committees) and `tpc:` | `/committees.html`, `/tpc_members.html` |
+| `data/sponsors.yaml` | sponsor name, logo, link | home |
+
+Keynotes are the exception: each speaker is a file under
+`content/keynotes/` with YAML front matter, because each one gets its own page
+at `/keynotes/<file>.html`. The list page is `content/keynotes/_index.md`
+(`url: /keynotes.html`), rendered by `layouts/keynotes/list.html`.
+
+How many items the home page shows is set in `hugo.toml`:
+
+```toml
+[params.home]
+  keynotes = 3
+  news = 5
+  deadlines = 6
+```
+
+Shortcodes in use: `hero`, `section`, `card`, `keynotes-preview`, `news-list`,
+`deadlines`, `committee-list`, `sponsor-grid`, `countdown`, `timeline-item`,
+`panel`, `register-cta`.
+
+### Adding a keynote
+
+1. Create `content/keynotes/<slug>.md`.
+2. Fill in `name`, `role`, `affiliation`, `talk`, optional `photo`, `website`,
+   `email`, and `weight` (controls the order).
+3. Put the biography and abstract in the body under `## Biography` and
+   `## Abstract`.
+
+### Relative links with nested pages
+
+Keynote pages live one directory deep, so shared partials compute a prefix
+with `partial "rel-prefix.html" .` and use it in every `href`/`src`. To link to
+another page from a template use `partial "rel-url.html" (dict "page" $ "target" .)`.
+Never hard-code `../` and never use `relURL`/`absURL` — the sites must keep
+working from any base path.
+
+---
+
 ## Editing Workflow
 
 1. Edit markdown in `content/` or shortcodes in `layouts/_shortcodes/`.
