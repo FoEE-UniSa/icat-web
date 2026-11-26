@@ -29,6 +29,4 @@ Original, completed and unpublished work is invited across four tracks:
 
 Accepted papers are submitted for inclusion into **IEEE Xplore®**, subject to meeting IEEE Xplore's scope and quality requirements. ICAT 2027 is technically co-sponsored by the IEEE Control Systems Society, IEEE Industrial Electronics Society, and IEEE Systems, Man and Cybernetics Society, and is hosted by the Faculty of Electrical Engineering, University of Sarajevo.
 
-{{< editions >}}
-
 {{< /section >}}

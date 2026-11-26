@@ -65,10 +65,7 @@
 
         <div class="icat-footer-legal">
             <span>© {{ $c.year }} ICAT Conference Committee</span>
-            <span>Previous editions:
-                {{ range $i, $e := hugo.Data.editions }}{{ if $i }} · {{ end }}<a
-                    href="{{ $p }}{{ $e.url }}">{{ $e.year }}</a>{{ end }}
-            </span>
+            <span><a href="{{ $p }}editions.html">Previous editions</a></span>
             <span><a href="{{ $p }}about.html">About ICAT</a></span>
         </div>
     </div>

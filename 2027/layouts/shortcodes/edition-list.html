@@ -1,0 +1,13 @@
+{{ $p := partial "rel-prefix.html" .Page }}
+<ul class="icat-edition-list">
+{{ range hugo.Data.editions }}
+<li>
+<span class="icat-edition-year">{{ .year }}</span>
+<span class="icat-edition-body">
+<span class="icat-edition-title">{{ .edition }} International {{ .kind }}</span>
+<span class="icat-edition-meta">{{ .city }} · {{ .dates }}</span>
+</span>
+<span class="icat-edition-links">{{ with .url }}<a href="{{ $p }}{{ . }}">Website</a>{{ end }}<a href="{{ .xplore }}" rel="noopener">IEEE Xplore</a></span>
+</li>
+{{ end }}
+</ul>

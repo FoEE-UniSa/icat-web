@@ -739,37 +739,63 @@ section.icat-section-alt .card {
 
 /* ---------- Previous editions ---------- */
 
-.icat-editions {
-    border-top: 1px solid var(--icat-border);
-    padding-top: 1.5rem;
-    margin-top: 2.5rem;
-}
-
-.icat-editions h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.9rem;
-}
-
-.icat-editions ul {
+.icat-edition-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    border-top: 1px solid var(--icat-border);
 }
 
-.icat-editions li {
-    padding: 0.55rem 0;
-    border-bottom: 1px solid rgb(var(--icat-primary-rgb) / 0.08);
-    font-size: 0.95rem;
+.icat-edition-list li {
+    display: grid;
+    grid-template-columns: 5rem 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--icat-border);
 }
 
-.icat-editions li:last-child {
-    border-bottom: none;
+.icat-edition-year {
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--icat-primary);
 }
 
-.icat-editions-links {
+.icat-edition-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.icat-edition-title {
+    font-weight: 600;
+}
+
+.icat-edition-meta {
     color: var(--icat-text-muted);
-    margin-left: 0.35rem;
+    font-size: 0.9rem;
+}
+
+.icat-edition-links {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.icat-edition-links a + a::before {
+    content: '·';
+    color: var(--icat-text-muted);
+    margin-inline: 0.45rem;
+}
+
+@media (max-width: 575.98px) {
+    .icat-edition-list li {
+        grid-template-columns: 3.5rem 1fr;
+        gap: 0.35rem 0.75rem;
+    }
+
+    .icat-edition-links {
+        grid-column: 2;
+    }
 }
 
 /* ---------- Timeline (program) ---------- */

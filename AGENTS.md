@@ -180,7 +180,7 @@ edited in one place only.
 | `data/committee.yaml` | `groups:` (committees) and `tpc:` | `/committees.html`, `/tpc_members.html` |
 | `data/sponsors.yaml` | `technical:` and `sponsors:` groups, each with its own `enabled` switch | home |
 | `data/stats.yaml` | the four numbers under "Fifty years of ICAT" | home |
-| `data/editions.yaml` | previous editions: year, city, dates, site URL, Xplore link | `/about.html`, footer |
+| `data/editions.yaml` | previous editions: year, ordinal, city, dates, site URL, IEEE Xplore link | `/editions.html` |
 
 Keynotes are the exception: each speaker is a file under
 `content/keynotes/` with YAML front matter, because each one gets its own page

@@ -79,6 +79,11 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link{{ if eq $page "editions" }} active{{ end }}"
+                        href="{{ $p }}editions.html">Editions</a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle{{ if in $attend $page }} active{{ end }}" href="#"
                         data-bs-toggle="dropdown" role="button" aria-expanded="false">Attend</a>

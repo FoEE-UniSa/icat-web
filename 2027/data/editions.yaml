@@ -1,16 +1,74 @@
-# Previous editions, newest first.
-# `url` is relative to the current edition's folder, so ../2025/ points at
-# the 2025 site on the same domain. `proceedings` is optional — fill it with
-# the IEEE Xplore link once the volume exists.
+# Previous ICAT editions, newest first.
+#
+#   edition  — ordinal of the edition
+#   kind     — ICAT ran as a Symposium in 2009 and 2011, and as a Conference since 2013
+#   xplore   — IEEE Xplore conference home; the number is IEEE's publication number
+#   url      — that edition's site on this domain, where one exists
+#
+# Data verified against Crossref (IEEE deposits every volume there).
+# ICAT papers first appear in IEEE Xplore in 2009; nothing earlier is indexed.
 
 - year: 2025
-  city: "Sarajevo, Bosnia and Herzegovina"
+  edition: "30th"
+  kind: "Conference"
   dates: "2–4 September 2025"
+  city: "Sarajevo, Bosnia and Herzegovina"
   url: "../2025/"
-  proceedings: ""
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/11189257/proceeding"
 
 - year: 2023
+  edition: "29th"
+  kind: "Conference"
+  dates: "11–14 June 2023"
   city: "Sarajevo, Bosnia and Herzegovina"
-  dates: ""
   url: "../2023/"
-  proceedings: ""
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/10171241/proceeding"
+
+- year: 2022
+  edition: "28th"
+  kind: "Conference"
+  dates: "16–18 June 2022"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/9810982/proceeding"
+
+- year: 2019
+  edition: "27th"
+  kind: "Conference"
+  dates: "20–23 October 2019"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/8932650/proceeding"
+
+- year: 2017
+  edition: "26th"
+  kind: "Conference"
+  dates: "26–28 October 2017"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/8125633/proceeding"
+
+- year: 2015
+  edition: "25th"
+  kind: "Conference"
+  dates: "29–31 October 2015"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/7331833/proceeding"
+
+- year: 2013
+  edition: "24th"
+  kind: "Conference"
+  dates: "30 October – 1 November 2013"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/6675893/proceeding"
+
+- year: 2011
+  edition: "23rd"
+  kind: "Symposium"
+  dates: "27–29 October 2011"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/6093619/proceeding"
+
+- year: 2009
+  edition: "22nd"
+  kind: "Symposium"
+  dates: "29–31 October 2009"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  xplore: "https://ieeexplore.ieee.org/xpl/conhome/5340905/proceeding"
