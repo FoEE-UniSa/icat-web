@@ -1105,6 +1105,13 @@ section.icat-section-alt .card {
     border-top: 1px solid var(--icat-border);
 }
 
+.icat-sponsor-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--icat-text-muted);
+    margin: 1.25rem 0 0;
+}
+
 .icat-section-slim {
     padding: 2.75rem 0;
 }

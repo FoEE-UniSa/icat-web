@@ -5,7 +5,7 @@
 technical:
   enabled: false
   heading: "Technical co-sponsors"
-  lede: "ICAT 2027 is technically co-sponsored by IEEE societies."
+  note: "Pending confirmation"
   items:
     - name: IEEE Control Systems Society
       logo: images/IEEE-CSS_logo.png
