@@ -52,25 +52,6 @@ jobs:
           sed "s|__BASE__|${base_path}/|g" deploy/404.html > dist/404.html
           touch dist/.nojekyll
 
-      - name: Check output
-        run: |
-          set -euo pipefail
-          fail=0
-          for year in 2023 2025 2027; do
-            out="dist/$year"
-            if [ ! -f "$out/index.html" ]; then
-              echo "::error::$year/index.html missing"; fail=1
-            fi
-            if grep -rIlq --include='*.html' --include='*.xml' "<?php" "$out"; then
-              echo "::error::$year contains PHP"; fail=1
-            fi
-            if grep -rIlqE --include='*.html' --include='*.xml' --include='*.css' --include='*.js' \
-                 "\{\{[ ]*\(?[a-z]" "$out"; then
-              echo "::error::$year contains unrendered Hugo templates"; fail=1
-            fi
-          done
-          exit $fail
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

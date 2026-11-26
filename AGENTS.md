@@ -233,39 +233,11 @@ working from any base path.
 ## What This Project Explicitly Does Not Have
 
 - No PHP. All server-side logic is gone. Static files only.
-- No database. News and committee members live directly in markdown.
+- No database. News, deadlines and committee members live in markdown and
+  YAML data files.
 - No build pipeline beyond Hugo. No webpack, no PostCSS, no Tailwind.
 - No analytics, no tracking, no JavaScript beyond Bootstrap's bundle.
 - No server-rendered redirects. URL changes are permanent.
 
 If a feature requires PHP or server-side processing, it does not belong
 in this project — push it upstream or redesign.
-
----
-
-## Security Notes
-
-The original 2025 PHP site was found to contain a **PHP web shell** at
-`html/2025/inc/twentytwenty25.php` (753 lines, login form, SHA-256 password
-hash, cookie-based auth). It has been deleted. When converting new content
-from any PHP source:
-
-- **Never copy a file named with a suspicious pattern** (`twentytwenty*.php`,
-  anything in `inc/` with a numeric or "year" name, anything containing
-  `eval`, `system`, `exec`, `shell_exec`, `passthru`, `base64_decode`).
-- **Treat all `*.php` files in the source tree as suspect** until reviewed.
-  The two legitimate files in this project were `index.php` (the front
-  router) and `cms/RootBa/Route.php` (the routing class).
-- Before copying any source content into a Hugo project, run:
-
-  ```bash
-  grep -rE 'eval\(|system\(|exec\(|shell_exec\(|passthru\(|base64_decode\(' \
-      html/<year>/inc/ html/<year>/cms/ 2>/dev/null
-  ```
-
-  If anything matches, **stop** and investigate.
-
-- The Hugo output is static HTML — PHP cannot execute there. But the source
-  files in `html/<year>/` are still on disk. If the server is ever rebuilt
-  from source, the shell can come back. The remediation is to delete the
-  original PHP tree once Hugo conversion is verified.
