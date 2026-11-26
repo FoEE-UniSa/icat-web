@@ -4,9 +4,11 @@
 #   kind     — ICAT ran as a Symposium in 2009 and 2011, and as a Conference since 2013
 #   xplore   — IEEE Xplore conference home; the number is IEEE's publication number
 #   url      — that edition's site on this domain, where one exists
+#   archive  — Wayback Machine snapshot, for editions that predate IEEE Xplore
 #
 # Data verified against Crossref (IEEE deposits every volume there).
-# ICAT papers first appear in IEEE Xplore in 2009; nothing earlier is indexed.
+# ICAT papers first appear in IEEE Xplore in 2009. The 2005 and 2007 editions
+# survive only as Wayback Machine snapshots of their websites.
 
 - year: 2025
   edition: "30th"
@@ -72,3 +74,17 @@
   dates: "29–31 October 2009"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/5340905/proceeding"
+
+- year: 2007
+  edition: "21st"
+  kind: "Symposium"
+  dates: "29–31 October 2007"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  archive: "https://web.archive.org/web/20071029174856/http://icat.etf.unsa.ba/"
+
+- year: 2005
+  edition: "20th"
+  kind: "Symposium"
+  dates: "3–5 October 2005"
+  city: "Sarajevo, Bosnia and Herzegovina"
+  archive: "https://web.archive.org/web/20051015025710/http://icat.etf.unsa.ba/"

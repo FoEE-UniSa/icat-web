@@ -7,7 +7,7 @@
 <span class="icat-edition-title">{{ .edition }} International {{ .kind }}</span>
 <span class="icat-edition-meta">{{ .city }} · {{ .dates }}</span>
 </span>
-<span class="icat-edition-links">{{ with .url }}<a href="{{ $p }}{{ . }}">Website</a>{{ end }}<a href="{{ .xplore }}" rel="noopener">IEEE Xplore</a></span>
+<span class="icat-edition-links">{{ with .url }}<a href="{{ $p }}{{ . }}">Website</a>{{ end }}{{ with .xplore }}<a href="{{ . }}" rel="noopener">IEEE Xplore</a>{{ end }}{{ with .archive }}<a href="{{ . }}" rel="noopener">Archived site</a>{{ end }}</span>
 </li>
 {{ end }}
 </ul>
