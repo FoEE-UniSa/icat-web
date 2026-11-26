@@ -712,6 +712,66 @@ section.icat-section-alt .card {
     color: var(--icat-text-muted);
 }
 
+/* ---------- Fact list ---------- */
+
+.icat-facts {
+    margin: 0;
+    border-top: 1px solid var(--icat-border);
+}
+
+.icat-facts > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--icat-border);
+}
+
+.icat-facts dt {
+    font-weight: 600;
+}
+
+.icat-facts dd {
+    margin: 0;
+    color: var(--icat-text-muted);
+    text-align: right;
+}
+
+/* ---------- Previous editions ---------- */
+
+.icat-editions {
+    border-top: 1px solid var(--icat-border);
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.icat-editions h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+
+.icat-editions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icat-editions li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgb(var(--icat-primary-rgb) / 0.08);
+    font-size: 0.95rem;
+}
+
+.icat-editions li:last-child {
+    border-bottom: none;
+}
+
+.icat-editions-links {
+    color: var(--icat-text-muted);
+    margin-left: 0.35rem;
+}
+
 /* ---------- Timeline (program) ---------- */
 
 .icat-timeline {

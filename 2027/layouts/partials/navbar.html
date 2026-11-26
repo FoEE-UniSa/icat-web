@@ -7,7 +7,7 @@
 
 {{ $authors := slice "calls" "dates" "submissions" "presentations" }}
 {{ $program := slice "keynotes" "program" "panels" "workshops" "tutorials" }}
-{{ $attend := slice "registration" "venue" "travel" "visas" }}
+{{ $attend := slice "registration" "venue" "travel" "visas" "faq" }}
 {{ $committee := slice "committees" "tpc_members" }}
 
 <nav class="navbar navbar-expand-lg icat-navbar sticky-top">
@@ -91,6 +91,8 @@
                                 href="{{ $p }}travel.html"><i class="bi bi-airplane"></i>Travel Info</a></li>
                         <li><a class="dropdown-item{{ if eq $page "visas" }} active{{ end }}"
                                 href="{{ $p }}visas.html"><i class="bi bi-passport"></i>Visa Information</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "faq" }} active{{ end }}"
+                                href="{{ $p }}faq.html"><i class="bi bi-question-circle"></i>FAQ</a></li>
                     </ul>
                 </li>
 

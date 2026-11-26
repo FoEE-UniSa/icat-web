@@ -48,6 +48,7 @@
                     <li class="mb-2"><a href="{{ $p }}venue.html">Conference Venue</a></li>
                     <li class="mb-2"><a href="{{ $p }}travel.html">Travel Info</a></li>
                     <li class="mb-2"><a href="{{ $p }}visas.html">Visa Information</a></li>
+                    <li class="mb-2"><a href="{{ $p }}faq.html">FAQ</a></li>
                 </ul>
             </div>
 
@@ -64,6 +65,10 @@
 
         <div class="icat-footer-legal">
             <span>© {{ $c.year }} ICAT Conference Committee</span>
+            <span>Previous editions:
+                {{ range $i, $e := hugo.Data.editions }}{{ if $i }} · {{ end }}<a
+                    href="{{ $p }}{{ $e.url }}">{{ $e.year }}</a>{{ end }}
+            </span>
             <span><a href="{{ $p }}about.html">About ICAT</a></span>
         </div>
     </div>

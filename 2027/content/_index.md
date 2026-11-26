@@ -13,14 +13,14 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 {{< /section >}}
 
 <!-- News & Updates -->
-{{< section id="news" alt="true" >}}
+{{< section id="news" >}}
 
 {{< news-list >}}
 
 {{< /section >}}
 
 <!-- Keynotes preview -->
-{{< section id="keynotes" eyebrow="Plenary & invited talks" heading="Headline speakers" lede="The plenary programme is being finalised. Announcements will appear here as speakers are confirmed." >}}
+{{< section id="keynotes" alt="true" eyebrow="Plenary & invited talks" heading="Headline speakers" lede="The plenary programme is being finalised. Announcements will appear here as speakers are confirmed." >}}
 
 {{< keynotes-preview >}}
 
@@ -31,7 +31,7 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 {{< /section >}}
 
 <!-- Programme in depth: Workshops · Tutorials · Special sessions · Panel -->
-{{< section id="programme" eyebrow="In depth" heading="Beyond the main track" lede="The programme is more than papers. Half-day workshops, hands-on tutorials and a live round table round out three intense days." alt="true" >}}
+{{< section id="programme" eyebrow="In depth" heading="Beyond the main track" lede="The programme is more than papers. Half-day workshops, hands-on tutorials and a live round table round out three intense days." >}}
 
 <div class="row g-4">
 
@@ -43,6 +43,29 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 
 {{< card icon="bi-chat-square-text-fill" eyebrow="Round table" title="An open debate" lede="Industry and academia go head-to-head on a question that shapes the practice of our field. Audience participation encouraged." link="panels.html" link_text="See the round table" >}}
 
+</div>
+
+{{< /section >}}
+
+<!-- Venue -->
+{{< section id="venue" eyebrow="Where we meet" heading="Sarajevo" lede="The 31st edition takes place in Sarajevo. The venue and negotiated hotel rates are announced with the second call for papers." alt="true" >}}
+
+<div class="row g-5">
+<div class="col-lg-7">
+<p>Sarajevo sits in a valley between the Olympic mountains, where Ottoman bazaar streets and Austro-Hungarian facades stand a ten-minute walk apart. The city has hosted the Winter Olympics, survived the longest siege of a capital in modern history, and kept its hospitality through all of it.</p>
+<div class="d-flex flex-wrap gap-2 mt-4">
+<a href="venue.html" class="btn btn-outline-primary">About the city</a>
+<a href="travel.html" class="btn btn-outline-primary">Travel &amp; visas</a>
+</div>
+</div>
+<div class="col-lg-5">
+<dl class="icat-facts">
+<div><dt>Venue</dt><dd>Announced with the second call</dd></div>
+<div><dt>Airport</dt><dd>SJJ, 12 km from the centre</dd></div>
+<div><dt>Currency</dt><dd>BAM, fixed at 1.95583 per EUR</dd></div>
+<div><dt>Time zone</dt><dd>Central European Time (GMT+1)</dd></div>
+</dl>
+</div>
 </div>
 
 {{< /section >}}
