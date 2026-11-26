@@ -1,0 +1,60 @@
+{{ $name := .Get "name" }}
+{{ $id := .Get "id" | default (lower (replace $name " " "-")) }}
+{{ $photo := .Get "photo" }}
+{{ $title := .Get "title" }}
+{{ $affiliation := .Get "affiliation" }}
+{{ $website := .Get "website" }}
+{{ $email := .Get "email" }}
+{{ $date := .Get "date" }}
+{{ $time := .Get "time" }}
+{{ $room := .Get "room" }}
+{{ $bio := .Get "bio" }}
+{{ $abstract := .Get "abstract" }}
+{{ $talkTitle := .Get "talk" }}
+<div id="keynote-{{ $id }}">
+    {{ if $talkTitle }}<div class="row p-4">
+        <div class="col">
+            <h2>{{ $talkTitle }}</h2>
+        </div>
+    </div>{{ end }}
+    <div class="row p-4">
+        {{ if $photo }}
+        <div class="col-lg-4 col-md-4 col-12 text-center">
+            <img src="{{ $photo }}" class="w-100 speaker-photo" alt="{{ $name }}">
+        </div>
+        <div class="col-lg-8 col-md-8 col-12">
+            {{ else }}
+            <div class="col-12">
+                {{ end }}
+                <div>
+                    <h3>{{ $name }}</h3>
+                    {{ if $title }}
+                    <hr>
+                    <h6>{{ $title }}{{ if $affiliation }}<br>{{ $affiliation }}{{ end }}</h6>{{ end }}
+                    {{ if or $website $email }}
+                    <hr>
+                    <p>{{ if $website }}<span><a href="{{ $website }}" target="_blank"
+                                rel="noopener">Website</a></span>{{ end }}{{ if and $website $email }} | {{ end }}{{ if
+                        $email }}<span><a href="mailto:{{ $email }}">E-Mail</a></span>{{ end }}</p>{{ end }}
+                    {{ if or $date $time $room }}
+                    <hr>
+                    <p class="session-meta">{{ if $date }}<span>Date: {{ $date }}</span> {{ end }}{{ if $time
+                        }}<br><span>Time: {{ $time }}</span> {{ end }}{{ if $room }}<br><span>Room: {{ $room }}</span>{{
+                        end }}</p>
+                    <hr>{{ end }}
+                </div>
+            </div>
+        </div>
+        {{ if $bio }}<div class="row px-4">
+            <div class="col">
+                <h4>Short Biography</h4>
+                <p class="mx-4"><em>{{ $bio }}</em></p>
+            </div>
+        </div>{{ end }}
+        {{ if $abstract }}<div class="row px-4">
+            <div class="col">
+                <h4>Abstract</h4>
+                <p class="mx-4"><em>{{ $abstract }}</em></p>
+            </div>
+        </div>{{ end }}
+    </div>

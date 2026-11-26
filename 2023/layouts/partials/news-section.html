@@ -1,0 +1,11 @@
+{{ $news := .Site.GetPage "/news.md" }}
+{{ with $news }}
+<div class="row py-4 m-2 ">
+    <div class="col ">
+        <h3 class="p-2 text-center bg-dark text-white ">News &amp; Updates</h3>
+    </div>
+</div>
+<div class="list-group">
+    {{ .Content }}
+</div>
+{{ end }}

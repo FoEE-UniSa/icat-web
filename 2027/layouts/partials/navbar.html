@@ -1,0 +1,105 @@
+{{ $page := "" }}
+{{ with .File }}{{ $page = .BaseFileName }}{{ end }}
+{{ if eq $page "_index" }}{{ $page = "index" }}{{ end }}
+
+{{ $authors := slice "calls" "dates" "submissions" "presentations" }}
+{{ $program := slice "keynotes" "program" "panels" "workshops" "tutorials" }}
+{{ $attend := slice "registration" "venue" "travel" "visas" }}
+{{ $committee := slice "committees" "tpc_members" }}
+
+<nav class="navbar navbar-expand-lg icat-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="images/icat_logo.png" alt="ICAT" class="icat-brand-logo" width="30" height="28">
+            <span class="icat-brand-title">ICAT <span class="icat-brand-year">2027</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#icatNav"
+            aria-controls="icatNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="icatNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link{{ if eq $page "index" }} active{{ end }}" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{{ if eq $page "about" }} active{{ end }}" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle{{ if in $committee $page }} active{{ end }}" href="#"
+                        data-bs-toggle="dropdown" role="button" aria-expanded="false">Committee</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item{{ if eq $page "committees" }} active{{ end }}"
+                                href="committees.html"><i class="bi bi-people-fill"></i>Conference Committee</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "tpc_members" }} active{{ end }}"
+                                href="tpc_members.html"><i class="bi bi-person-lines-fill"></i>TPC Members</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle{{ if in $authors $page }} active{{ end }}" href="#"
+                        data-bs-toggle="dropdown" role="button" aria-expanded="false">Authors</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item{{ if eq $page "calls" }} active{{ end }}" href="calls.html"><i
+                                    class="bi bi-pencil-square"></i>Call for Papers</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "dates" }} active{{ end }}" href="dates.html"><i
+                                    class="bi bi-calendar-event"></i>Important Dates</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "submissions" }} active{{ end }}"
+                                href="submissions.html"><i class="bi bi-file-earmark-arrow-up"></i>Submission
+                                Guidelines</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "presentations" }} active{{ end }}"
+                                href="presentations.html"><i class="bi bi-easel"></i>Presentation Guidelines</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle{{ if in $program $page }} active{{ end }}" href="#"
+                        data-bs-toggle="dropdown" role="button" aria-expanded="false">Program</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item{{ if eq $page "keynotes" }} active{{ end }}" href="keynotes.html"><i
+                                    class="bi bi-mic"></i>Keynotes</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "program" }} active{{ end }}" href="program.html"><i
+                                    class="bi bi-calendar3"></i>Schedule</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "panels" }} active{{ end }}" href="panels.html"><i
+                                    class="bi bi-chat-square-text"></i>Round Table</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "workshops" }} active{{ end }}"
+                                href="workshops.html"><i class="bi bi-people"></i>Workshops</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "tutorials" }} active{{ end }}"
+                                href="tutorials.html"><i class="bi bi-mortarboard"></i>Tutorials</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle{{ if in $attend $page }} active{{ end }}" href="#"
+                        data-bs-toggle="dropdown" role="button" aria-expanded="false">Attend</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item{{ if eq $page "registration" }} active{{ end }}"
+                                href="registration.html"><i class="bi bi-person-check"></i>Registration</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "venue" }} active{{ end }}" href="venue.html"><i
+                                    class="bi bi-building"></i>Conference Venue</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "travel" }} active{{ end }}" href="travel.html"><i
+                                    class="bi bi-airplane"></i>Travel Info</a></li>
+                        <li><a class="dropdown-item{{ if eq $page "visas" }} active{{ end }}" href="visas.html"><i
+                                    class="bi bi-passport"></i>Visa Information</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ms-lg-2 d-flex align-items-center gap-2">
+                    {{ if .Site.Params.registrationOpen }}
+                    <a href="registration.html" class="btn btn-primary btn-sm fw-semibold px-3 icat-nav-cta"
+                        {{ if eq $page "registration" }}aria-current="page"{{ end }}>
+                        Register
+                    </a>
+                    {{ end }}
+                    <button class="icat-theme-toggle" type="button" aria-label="Toggle colour theme">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

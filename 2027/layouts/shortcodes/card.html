@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-lg-3">
+<div class="card h-100">
+<div class="card-body p-4">
+{{ if .Get "icon" }}<div class="icat-card-icon mb-3"><i class="{{ .Get "icon" }}"></i></div>{{ end }}
+{{ if .Get "eyebrow" }}<div class="icat-label">{{ .Get "eyebrow" | safeHTML }}</div>{{ end }}
+{{ if .Get "title" }}<h3 class="h5 fw-bold mb-2">{{ .Get "title" | safeHTML }}</h3>{{ end }}
+{{ if .Get "lede" }}<p class="small mb-3">{{ .Get "lede" | safeHTML }}</p>{{ end }}
+{{ if and (.Get "link") (.Get "link_text") }}<a href="{{ .Get "link" }}" class="stretched-link small fw-semibold">{{ .Get "link_text" }} <i class="bi bi-arrow-right"></i></a>{{ end }}
+</div>
+</div>
+</div>

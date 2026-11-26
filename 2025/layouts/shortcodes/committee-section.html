@@ -1,0 +1,6 @@
+<h3>{{ .Get "heading" }}</h3>
+<ul>
+    {{ range $m := split (.Get "members") "|" }}
+    <li>{{ $m | safeHTML }}</li>
+    {{ end }}
+</ul>

@@ -1,0 +1,8 @@
+RP: "{{ .RelPermalink }}<br>"
+BU: "{{ .Site.BaseURL }}<br>"
+IS_HOME: "{{ .IsHome }}<br>"
+PATH: "{{ strings.TrimPrefix .Site.BaseURL .RelPermalink }}<br>"
+TRIMMED: "{{ strings.TrimSuffix "/" (strings.TrimPrefix .Site.BaseURL .RelPermalink) }}<br>"
+SPLIT: {{ $s := split (strings.TrimSuffix "/" (strings.TrimPrefix .Site.BaseURL .RelPermalink)) "/" }}|
+  {{ range $s }}[{{ . }}]{{ end }}|<br>
+LEN: {{ len (split (strings.TrimSuffix "/" (strings.TrimPrefix .Site.BaseURL .RelPermalink)) "/") }}<br>

@@ -1,0 +1,9 @@
+baseURL = "https://icat.etf.unsa.ba/2023/"
+title = "ICAT 2023"
+name = "ICAT 2023"
+
+[permalinks.page]
+  "/**" = "/:contentbasename.html"
+
+[markup.goldmark.renderer]
+unsafe = true

@@ -1,0 +1,1144 @@
+/* ICAT 2027 — conference theme
+   Bootstrap 5.3 + Bootstrap Icons.
+   Neutral ink/paper base, one accent. No gradients.
+   Flat relative links (no leading slash), no runtime CDN except Google Fonts.
+*/
+
+:root,
+[data-bs-theme="light"] {
+    --icat-surface: #fbfaf7;
+    --icat-surface-2: #f4f1ea;
+    --icat-surface-3: #eae6dd;
+    --icat-text: #191b1f;
+    --icat-text-muted: #5b5f66;
+    --icat-border: #ded9ce;
+
+    --icat-primary: #1c4a7a;
+    --icat-primary-rgb: 28, 74, 122;
+    --icat-accent: #1c4a7a;
+    --icat-accent-strong: #123354;
+    --icat-accent-soft: #e9eff6;
+
+    --icat-panel: #191b1f;
+    --icat-panel-text: #f7f5f1;
+
+    --icat-shadow: 0 1px 2px rgb(25 27 31 / 0.06), 0 2px 8px rgb(25 27 31 / 0.05);
+    --icat-shadow-lg: 0 2px 6px rgb(25 27 31 / 0.07), 0 12px 28px rgb(25 27 31 / 0.09);
+
+    --icat-measure: 46rem;
+}
+
+[data-bs-theme="dark"] {
+    --icat-surface: #14161a;
+    --icat-surface-2: #1b1e23;
+    --icat-surface-3: #24282e;
+    --icat-text: #eae7e1;
+    --icat-text-muted: #a2a6ad;
+    --icat-border: #2e333b;
+
+    --icat-primary: #8ab4dc;
+    --icat-primary-rgb: 138, 180, 220;
+    --icat-accent: #8ab4dc;
+    --icat-accent-strong: #a9cbea;
+    --icat-accent-soft: #1c2a3a;
+
+    --icat-panel: #222730;
+    --icat-panel-text: #f2efe9;
+
+    --icat-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 2px 8px rgb(0 0 0 / 0.3);
+    --icat-shadow-lg: 0 2px 6px rgb(0 0 0 / 0.4), 0 12px 28px rgb(0 0 0 / 0.45);
+}
+
+/* Feed our tokens into Bootstrap */
+[data-bs-theme="light"],
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--icat-surface);
+    --bs-body-color: var(--icat-text);
+    --bs-border-color: var(--icat-border);
+    --bs-secondary-bg: var(--icat-surface-2);
+    --bs-tertiary-bg: var(--icat-surface-3);
+    --bs-secondary-color: var(--icat-text-muted);
+    --bs-emphasis-color: var(--icat-text);
+    --bs-link-color: var(--icat-primary);
+    --bs-link-hover-color: var(--icat-accent-strong);
+    --bs-link-color-rgb: var(--icat-primary-rgb);
+    --bs-primary: var(--icat-primary);
+    --bs-primary-rgb: var(--icat-primary-rgb);
+}
+
+/* Bootstrap compiles button colours literally, so re-point them. */
+.btn-primary {
+    --bs-btn-bg: var(--icat-primary);
+    --bs-btn-border-color: var(--icat-primary);
+    --bs-btn-hover-bg: var(--icat-accent-strong);
+    --bs-btn-hover-border-color: var(--icat-accent-strong);
+    --bs-btn-active-bg: var(--icat-accent-strong);
+    --bs-btn-active-border-color: var(--icat-accent-strong);
+    --bs-btn-disabled-bg: var(--icat-primary);
+    --bs-btn-disabled-border-color: var(--icat-primary);
+    --bs-btn-focus-shadow-rgb: var(--icat-primary-rgb);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--icat-primary);
+    --bs-btn-border-color: var(--icat-primary);
+    --bs-btn-hover-bg: var(--icat-primary);
+    --bs-btn-hover-border-color: var(--icat-primary);
+    --bs-btn-active-bg: var(--icat-primary);
+    --bs-btn-active-border-color: var(--icat-primary);
+    --bs-btn-disabled-color: var(--icat-primary);
+    --bs-btn-disabled-border-color: var(--icat-primary);
+    --bs-btn-focus-shadow-rgb: var(--icat-primary-rgb);
+}
+
+/* In dark theme the accent is a light colour, so button text must be dark. */
+[data-bs-theme="dark"] .btn-primary {
+    --bs-btn-color: #17191d;
+    --bs-btn-hover-color: #17191d;
+    --bs-btn-active-color: #17191d;
+    --bs-btn-disabled-color: #17191d;
+}
+
+[data-bs-theme="dark"] .btn-outline-primary {
+    --bs-btn-hover-color: #17191d;
+    --bs-btn-active-color: #17191d;
+}
+
+/* A "not yet available" action should read as inactive, not as a weak button. */
+.btn-primary.disabled,
+.btn-primary:disabled {
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--icat-border);
+    --bs-btn-color: var(--icat-text-muted);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--icat-border);
+    --bs-btn-disabled-color: var(--icat-text-muted);
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1180px;
+    }
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--icat-text);
+    background-color: var(--icat-surface);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    letter-spacing: -0.018em;
+    line-height: 1.22;
+}
+
+a {
+    color: var(--icat-primary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    color: var(--icat-accent-strong);
+}
+
+p code,
+li code {
+    color: var(--icat-text);
+}
+
+::selection {
+    background: rgb(var(--icat-primary-rgb) / 0.18);
+}
+
+/* ---------- Small shared pieces ---------- */
+
+.icat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--icat-text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.icat-chip {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.5rem;
+    border: 1px solid var(--icat-border);
+    border-radius: 2px;
+    color: var(--icat-text-muted);
+    white-space: nowrap;
+}
+
+.icat-chip-strong {
+    border-color: var(--icat-primary);
+    color: var(--icat-primary);
+}
+
+/* ---------- Navbar ---------- */
+
+.icat-navbar {
+    background-color: var(--icat-surface);
+    border-bottom: 1px solid var(--icat-border);
+    transition: box-shadow 0.2s ease;
+    padding-block: 0.7rem;
+}
+
+.icat-navbar.scrolled {
+    box-shadow: var(--icat-shadow);
+}
+
+.icat-navbar .navbar-brand {
+    gap: 0.6rem;
+    color: var(--icat-text);
+}
+
+.icat-brand-logo {
+    width: 30px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.icat-brand-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: var(--icat-text);
+    white-space: nowrap;
+}
+
+.icat-brand-year {
+    font-weight: 400;
+    color: var(--icat-text-muted);
+    margin-left: 0.15rem;
+}
+
+[data-bs-theme="light"] .icat-brand-logo,
+[data-bs-theme="light"] .icat-logo-mono {
+    filter: invert(1);
+    opacity: 0.85;
+}
+
+@media (max-width: 575.98px) {
+    .icat-brand-title {
+        font-size: 1.05rem;
+    }
+
+    .icat-brand-logo {
+        width: 26px;
+    }
+}
+
+.icat-navbar .nav-link {
+    font-weight: 500;
+    font-size: 0.94rem;
+    color: var(--icat-text);
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+}
+
+.icat-navbar .nav-link:hover {
+    color: var(--icat-primary);
+    background: var(--icat-surface-2);
+}
+
+.icat-navbar .nav-link.active {
+    color: var(--icat-primary);
+    font-weight: 600;
+}
+
+.icat-navbar .dropdown-menu {
+    border: 1px solid var(--icat-border);
+    box-shadow: var(--icat-shadow-lg);
+    border-radius: 6px;
+    padding: 0.35rem;
+    background: var(--icat-surface);
+    min-width: 240px;
+    margin-top: 0.4rem;
+}
+
+.icat-navbar .dropdown-item {
+    border-radius: 4px;
+    font-size: 0.92rem;
+    padding: 0.5rem 0.65rem;
+    color: var(--icat-text);
+}
+
+.icat-navbar .dropdown-item i {
+    color: var(--icat-text-muted);
+    font-size: 0.85rem;
+    width: 1.35rem;
+    text-align: center;
+    margin-right: 0.4rem;
+}
+
+.icat-navbar .dropdown-item:hover,
+.icat-navbar .dropdown-item:focus {
+    background: var(--icat-surface-2);
+    color: var(--icat-primary);
+}
+
+.icat-navbar .dropdown-item:hover i {
+    color: var(--icat-primary);
+}
+
+.icat-navbar .dropdown-item.active {
+    background: var(--icat-accent-soft);
+    color: var(--icat-primary);
+    font-weight: 600;
+}
+
+.icat-nav-cta {
+    border-radius: 4px;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 992px) {
+    .icat-navbar .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .icat-navbar .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        padding-left: 0.75rem;
+        background: transparent;
+    }
+
+    .icat-nav-cta {
+        margin-block: 0.5rem;
+        width: fit-content;
+    }
+}
+
+/* ---------- Hero ---------- */
+
+.icat-hero {
+    position: relative;
+    min-height: 84vh;
+    background-color: #101214;
+    background-image:
+        linear-gradient(100deg, rgb(11 13 16 / 0.92) 0%, rgb(11 13 16 / 0.72) 45%, rgb(11 13 16 / 0.3) 100%),
+        url('../images/sarajevo.jpg');
+    background-position: center, center 40%;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    color: var(--icat-panel-text);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-block: 4.5rem 6rem;
+}
+
+.icat-hero::after {
+    content: none;
+}
+
+.icat-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.icat-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    margin-bottom: 1.15rem;
+}
+
+.icat-hero .lead {
+    font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+    font-weight: 300;
+    line-height: 1.65;
+    max-width: 44rem;
+    margin-bottom: 1rem;
+}
+
+.icat-hero .icat-hero-kicker {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.66);
+    margin-bottom: 1.5rem;
+}
+
+.icat-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.95rem;
+    color: rgb(255 255 255 / 0.8);
+    margin-bottom: 0;
+}
+
+.icat-hero-meta i {
+    margin-right: 0.45rem;
+    opacity: 0.75;
+}
+
+.icat-hero-actions .btn {
+    border-radius: 4px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.icat-hero-actions .btn-primary {
+    --bs-btn-bg: var(--icat-panel-text);
+    --bs-btn-border-color: var(--icat-panel-text);
+    --bs-btn-color: #191b1f;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-hover-color: #191b1f;
+}
+
+.icat-hero-actions .btn-outline-light {
+    border-width: 1px;
+    border-color: rgb(255 255 255 / 0.5);
+}
+
+.icat-hero-actions .btn-outline-light:hover {
+    background: rgb(255 255 255 / 0.1);
+    border-color: rgb(255 255 255 / 0.8);
+}
+
+/* Countdown */
+.icat-countdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 575.98px) {
+    .icat-countdown {
+        flex-wrap: nowrap;
+        gap: 0.4rem;
+    }
+
+    .icat-countdown-unit {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0.65rem 0.25rem;
+    }
+
+    .icat-countdown-unit .number {
+        font-size: 1.3rem;
+    }
+
+    .icat-countdown-unit .label {
+        font-size: 0.58rem;
+        letter-spacing: 0.06em;
+    }
+}
+
+.icat-countdown-unit {
+    border: 1px solid rgb(255 255 255 / 0.22);
+    border-radius: 4px;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    min-width: 74px;
+}
+
+.icat-countdown-unit .number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.icat-countdown-unit .label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    margin-top: 0.35rem;
+    font-weight: 600;
+}
+
+/* ---------- Sections ---------- */
+
+section.icat-section {
+    padding: 4.75rem 0;
+}
+
+section.icat-section-alt {
+    background-color: var(--icat-surface-2);
+}
+
+.icat-section-head {
+    text-align: center;
+    max-width: 52rem;
+    margin: 0 auto 3rem;
+}
+
+.icat-section-eyebrow {
+    color: var(--icat-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    font-size: 0.72rem;
+    margin-bottom: 0.75rem;
+}
+
+.icat-section-heading {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.9rem;
+}
+
+.icat-section-lede {
+    font-size: 1.04rem;
+    color: var(--icat-text-muted);
+    max-width: 42rem;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Reading measure: prose blocks sit in a centred column, grids stay wide. */
+.icat-prose > p,
+.icat-prose > ul,
+.icat-prose > ol,
+.icat-prose > h2,
+.icat-prose > h3,
+.icat-prose > h4,
+.icat-prose > h5,
+.icat-prose > blockquote,
+.icat-prose > pre,
+.icat-prose > figure,
+.icat-prose > table,
+.icat-prose > .alert,
+.icat-prose > .icat-committee,
+.icat-prose > .icat-date-card {
+    max-width: var(--icat-measure);
+    margin-inline: auto;
+}
+
+/* Inner pages: headings and body share the left edge with the grids. */
+.icat-page .icat-section-head {
+    text-align: left;
+    max-width: none;
+    margin: 0 0 2.5rem;
+}
+
+.icat-page .icat-section-lede {
+    margin-inline: 0;
+    max-width: 42rem;
+}
+
+.icat-page .icat-prose > p,
+.icat-page .icat-prose > ul,
+.icat-page .icat-prose > ol,
+.icat-page .icat-prose > h2,
+.icat-page .icat-prose > h3,
+.icat-page .icat-prose > h4,
+.icat-page .icat-prose > h5,
+.icat-page .icat-prose > blockquote,
+.icat-page .icat-prose > pre,
+.icat-page .icat-prose > figure,
+.icat-page .icat-prose > table,
+.icat-page .icat-prose > .alert,
+.icat-page .icat-prose > .icat-committee,
+.icat-page .icat-prose > .icat-date-card {
+    margin-inline: 0;
+}
+
+.icat-page section.icat-section {
+    padding: 3.5rem 0 4rem;
+}
+
+.icat-page .icat-timeline {
+    margin-inline: 0;
+}
+
+.icat-prose > h2,
+.icat-prose > h3 {
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.icat-prose > p,
+.icat-prose > ul,
+.icat-prose > ol {
+    margin-bottom: 1.1rem;
+}
+
+.icat-prose > *:last-child {
+    margin-bottom: 0;
+}
+
+.icat-prose img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+    background: var(--icat-surface-3) !important;
+    color: var(--icat-text) !important;
+    border: 1px solid var(--icat-border) !important;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 0.35em 0.6em;
+}
+
+/* ---------- Alerts ---------- */
+
+.alert {
+    border: 1px solid var(--icat-border);
+    border-left: 3px solid var(--icat-border);
+    border-radius: 4px;
+    background: var(--icat-surface-2);
+    color: var(--icat-text);
+    font-size: 0.95rem;
+}
+
+.alert i {
+    margin-right: 0.35rem;
+}
+
+.alert-danger {
+    border-left-color: var(--icat-primary);
+    background: var(--icat-accent-soft);
+}
+
+.alert-info {
+    border-left-color: var(--icat-text-muted);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+    background-color: var(--icat-surface);
+    border: 1px solid var(--icat-border);
+    border-radius: 6px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--icat-shadow);
+    border-color: rgb(var(--icat-primary-rgb) / 0.35);
+}
+
+.card .card-title {
+    color: var(--icat-text);
+    font-weight: 700;
+}
+
+.card .card-text {
+    color: var(--icat-text-muted);
+}
+
+section.icat-section-alt .card {
+    background-color: var(--icat-surface);
+}
+
+.icat-card-icon {
+    color: var(--icat-primary);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+/* Speaker card */
+.icat-speaker-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.icat-speaker-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.icat-speaker-main {
+    flex: 1 1 auto;
+}
+
+.icat-speaker-card .speaker-photo {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--icat-border);
+    display: block;
+}
+
+.icat-speaker-meta {
+    color: var(--icat-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+/* ---------- Timeline (program) ---------- */
+
+.icat-timeline {
+    position: relative;
+    padding-left: 1.85rem;
+    margin-top: 2rem;
+    max-width: 52rem;
+    margin-inline: auto;
+}
+
+.icat-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.28rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 1px;
+    background: var(--icat-border);
+}
+
+.icat-timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.icat-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 0.45rem;
+    width: 0.58rem;
+    height: 0.58rem;
+    background: var(--icat-surface);
+    border: 1.5px solid var(--icat-primary);
+    border-radius: 50%;
+}
+
+.icat-timeline-time {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--icat-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.icat-timeline-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.3rem 0 0.25rem;
+}
+
+.icat-timeline-meta {
+    color: var(--icat-text-muted);
+    font-size: 0.88rem;
+}
+
+.icat-timeline-meta i {
+    margin-right: 0.2rem;
+}
+
+.icat-timeline-body {
+    font-size: 0.92rem;
+    color: var(--icat-text-muted);
+    margin-top: 0.5rem;
+}
+
+.icat-dot {
+    margin-inline: 0.5rem;
+}
+
+/* ---------- Dates / deadlines ---------- */
+
+.icat-date-card {
+    border: 1px solid var(--icat-border);
+    border-left: 3px solid var(--icat-border);
+    border-radius: 4px;
+    background: var(--icat-surface);
+    padding: 1rem 1.3rem;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.15s ease;
+}
+
+.icat-date-card:hover {
+    border-left-color: var(--icat-primary);
+}
+
+.icat-date-card.danger {
+    border-left-color: var(--icat-primary);
+}
+
+.icat-date-card.warning {
+    border-left-color: #9a7333;
+}
+
+.icat-date-card.success {
+    border-left-color: #4a6b4f;
+}
+
+.icat-date-label {
+    font-weight: 600;
+}
+
+.icat-date-when {
+    color: var(--icat-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- News ---------- */
+
+.icat-news-list {
+    border-top: 1px solid var(--icat-border);
+}
+
+.icat-news-list .list-group-item {
+    background-color: transparent;
+    border-color: var(--icat-border);
+    color: var(--icat-text);
+    padding: 1.1rem 0.25rem;
+    border-left: none;
+    border-right: none;
+    transition: background 0.15s ease, padding-left 0.2s ease;
+}
+
+.icat-news-list .list-group-item:hover {
+    background-color: var(--icat-surface-2);
+    padding-left: 0.9rem;
+}
+
+.icat-news-list h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--icat-text);
+}
+
+.icat-news-list p {
+    color: var(--icat-text-muted);
+    font-size: 0.92rem;
+}
+
+.icat-news-date {
+    color: var(--icat-text-muted);
+    font-size: 0.76rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+}
+
+.icat-news-date i {
+    margin-right: 0.35rem;
+}
+
+/* ---------- Panels ---------- */
+
+.icat-panel-meta {
+    color: var(--icat-text-muted);
+    font-size: 0.85rem;
+}
+
+.icat-panel-meta i {
+    margin-right: 0.3rem;
+}
+
+/* ---------- Committee ---------- */
+
+.icat-committee {
+    margin-bottom: 2rem;
+}
+
+.icat-committee-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--icat-primary);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--icat-border);
+}
+
+.icat-committee ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.icat-committee li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgb(var(--icat-primary-rgb) / 0.07);
+    font-size: 0.95rem;
+}
+
+.icat-committee li:last-child {
+    border-bottom: none;
+}
+
+/* ---------- Sponsors ---------- */
+
+.icat-sponsor-grid a:has(> img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 96px;
+    padding: 1.25rem 1rem;
+    background: var(--icat-surface);
+    border: 1px solid var(--icat-border);
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icat-sponsor-grid a:has(> img):hover {
+    box-shadow: var(--icat-shadow);
+    border-color: rgb(var(--icat-primary-rgb) / 0.35);
+}
+
+.icat-sponsor-grid img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.25s ease, opacity 0.25s ease;
+    max-height: 68px;
+    width: auto;
+}
+
+.icat-sponsor-grid a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.icat-host {
+    border-top: 1px solid var(--icat-border);
+}
+
+.icat-host-name {
+    color: var(--icat-text);
+}
+
+.icat-host a:hover .icat-host-name {
+    color: var(--icat-primary);
+}
+
+.icat-host a span {
+    color: var(--icat-text-muted);
+}
+
+/* ---------- Footer ---------- */
+
+footer.icat-footer {
+    background-color: var(--icat-surface-2);
+    border-top: 1px solid var(--icat-border);
+    padding: 3.5rem 0 1.75rem;
+    margin-top: 0;
+}
+
+footer.icat-footer h6 {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--icat-text-muted);
+}
+
+footer.icat-footer p,
+footer.icat-footer li {
+    color: var(--icat-text-muted);
+}
+
+footer.icat-footer a {
+    color: var(--icat-text-muted);
+    transition: color 0.15s ease;
+}
+
+footer.icat-footer a:hover {
+    color: var(--icat-primary);
+}
+
+footer.icat-footer li i {
+    margin-right: 0.4rem;
+}
+
+.icat-footer-brand {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.icat-footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--icat-border);
+    font-size: 0.82rem;
+    color: var(--icat-text-muted);
+}
+
+.icat-social-links a {
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--icat-surface);
+    border: 1px solid var(--icat-border);
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.icat-social-links a:hover {
+    background: var(--icat-primary);
+    color: #fff !important;
+    border-color: var(--icat-primary);
+}
+
+/* ---------- Theme toggle ---------- */
+
+.icat-theme-toggle {
+    background: transparent;
+    border: 1px solid var(--icat-border);
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--icat-text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.icat-theme-toggle:hover {
+    background: var(--icat-surface-2);
+    border-color: var(--icat-primary);
+}
+
+/* ---------- CTA panel ---------- */
+
+.icat-cta-band {
+    background: var(--icat-panel);
+    color: var(--icat-panel-text);
+    border-radius: 6px;
+}
+
+.icat-cta-band h2,
+.icat-cta-band h3,
+.icat-cta-band p {
+    color: var(--icat-panel-text);
+}
+
+.icat-cta-band p {
+    opacity: 0.75;
+}
+
+.icat-cta-band .btn {
+    border-radius: 4px;
+}
+
+.icat-cta-band .btn-light {
+    --bs-btn-bg: var(--icat-panel-text);
+    --bs-btn-border-color: var(--icat-panel-text);
+    --bs-btn-color: #191b1f;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-hover-color: #191b1f;
+}
+
+/* ---------- Reveal on scroll (only when JS is on) ---------- */
+
+.js .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .icat-hero .btn,
+    .card,
+    .icat-sponsor-grid img {
+        transition: none;
+    }
+}
+
+/* ---------- Stats ---------- */
+
+.icat-stat {
+    padding: 1.5rem 1rem;
+    border-radius: 4px;
+    background: var(--icat-surface);
+    border: 1px solid var(--icat-border);
+}
+
+.icat-stat .number {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--icat-text);
+    line-height: 1.1;
+}
+
+.icat-stat .label {
+    color: var(--icat-text-muted);
+    font-size: 0.85rem;
+}
+
+/* ---------- 404 ---------- */
+
+.icat-error {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.icat-error-code {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--icat-border);
+    margin-bottom: 1rem;
+}
+
+/* ---------- Misc ---------- */
+
+.icat-divider {
+    height: 3px;
+    width: 48px;
+    background: var(--icat-primary);
+    border-radius: 2px;
+    margin: 0 auto 2rem;
+}

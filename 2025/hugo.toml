@@ -1,0 +1,10 @@
+baseURL = "https://icat.etf.unsa.ba/2025/"
+title = "ICAT 2025"
+name = "ICAT 2025"
+
+# Flat output: content/calls.md → /2025/calls.html (matches old PHP URLs)
+[permalinks.page]
+  "/**" = "/:contentbasename.html"
+
+[markup.goldmark.renderer]
+unsafe = true

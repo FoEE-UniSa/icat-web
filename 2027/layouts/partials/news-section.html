@@ -1,0 +1,14 @@
+{{ $news := .Site.GetPage "/news.md" }}
+{{ with $news }}
+<div class="icat-section-head reveal">
+<div class="icat-section-eyebrow">Latest</div>
+<h2 class="icat-section-heading">News &amp; updates</h2>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-9">
+<div class="list-group list-group-flush icat-news-list">
+{{ .Content | replaceRE "<p><a " "<a " | replaceRE "</a></p>" "</a>" | safeHTML }}
+</div>
+</div>
+</div>
+{{ end }}

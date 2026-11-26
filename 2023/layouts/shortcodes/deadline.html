@@ -1,0 +1,4 @@
+{{ $variant := .Get "variant" | default "" }}
+<li class="list-group-item list-group-item-action{{ if $variant }} list-group-item-{{ $variant }}{{ end }} text-center">
+    {{ .Inner | safeHTML }}
+</li>

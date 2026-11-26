@@ -1,0 +1,11 @@
+{{ $title := .Get "title" }}
+<div class="card">
+    <div class="card-body p-0 flex-fill">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item list-group-item-dark text-center">
+                <h5 class="card-title text-center">{{ $title }}</h5>
+            </li>
+            {{ .Inner }}
+        </ul>
+    </div>
+</div>

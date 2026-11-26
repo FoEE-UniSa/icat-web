@@ -1,0 +1,60 @@
+{{ $id := .Get "id" }}
+{{ $title := .Get "title" }}
+{{ $moderator := .Get "moderator" }}
+{{ $chairsLabel := .Get "chairsLabel" | default "Organizers and Chairs" }}
+{{ $participants := .Get "participants" }}
+{{ $participantLabel := .Get "participantLabel" | default "Panelists" }}
+{{ $date := .Get "date" }}
+{{ $time := .Get "time" }}
+{{ $room := .Get "room" }}
+{{ $abstract := .Get "abstract" }}
+{{ $photo := .Get "photo" }}
+{{ $photoAlt := .Get "photoAlt" | default $title }}
+{{ $biography := .Get "biography" }}
+<div class="m-4" id="{{ $id }}">
+    <h2>{{ $title }}</h2>
+    {{ if $moderator }}
+    <h3>Moderator:</h3>
+    <ul>
+        <li>{{ $moderator }}</li>
+    </ul>
+    {{ else if $participants }}
+    <h3>{{ $chairsLabel }}:</h3>
+    {{ end }}
+    {{ if $participants }}
+    <h3>{{ $participantLabel }}:</h3>
+    <ul>
+        {{ range $p := split $participants "|" }}
+        <li>{{ $p }}</li>
+        {{ end }}
+    </ul>
+    {{ end }}
+    {{ if or $date $time $room }}
+    <p class="session-meta">
+        {{ if $date }}<span>Date: {{ $date }}</span> {{ end }}
+        {{ if $time }}<br><span>Time: {{ $time }}</span> {{ end }}
+        {{ if $room }}<br><span>Room: {{ $room }}</span>{{ end }}
+    </p>
+    {{ end }}
+
+    {{ if $abstract }}
+    <h3>Abstract</h3>
+    <p class="mx-4"><em>{{ $abstract }}</em></p>
+    {{ end }}
+
+    {{ if or $photo $biography }}
+    <h3>{{ if $biography }}Organizers Biography{{ else }}Abstract{{ end }}</h3>
+    <div class="row p-4">
+        {{ if $photo }}
+        <div class="col-lg-3 col-md-3 col-12 text-center">
+            <img src="{{ $photo }}" class="w-100 speaker-photo" alt="{{ $photoAlt }}">
+        </div>
+        <div class="col-lg-9 col-md-9 col-12">
+            {{ else }}
+            <div class="col-12">
+                {{ end }}
+                <div>{{ $biography }}</div>
+            </div>
+        </div>
+        {{ end }}
+    </div>

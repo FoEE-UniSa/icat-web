@@ -1,0 +1,19 @@
+{{ $id := .Get "id" | default "" }}
+{{ $eyebrow := .Get "eyebrow" | default "" }}
+{{ $heading := .Get "heading" | default "" }}
+{{ $lede := .Get "lede" | default "" }}
+{{ $alt := .Get "alt" | default "" }}
+<section class="icat-section{{ if eq $alt "true" }} icat-section-alt{{ end }}"{{ with $id }} id="{{ . }}"{{ end }}>
+<div class="container">
+{{ if or $eyebrow $heading $lede }}
+<div class="icat-section-head reveal">
+{{ if $eyebrow }}<div class="icat-section-eyebrow">{{ $eyebrow }}</div>{{ end }}
+{{ if $heading }}{{ if $.Page.IsHome }}<h2 class="icat-section-heading">{{ $heading }}</h2>{{ else }}<h1 class="icat-section-heading">{{ $heading }}</h1>{{ end }}{{ end }}
+{{ if $lede }}<p class="icat-section-lede">{{ $lede }}</p>{{ end }}
+</div>
+{{ end }}
+<div class="icat-prose">
+{{ .Inner | markdownify }}
+</div>
+</div>
+</section>
