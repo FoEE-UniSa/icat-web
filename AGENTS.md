@@ -174,7 +174,7 @@ edited in one place only.
 
 | File | Holds | Used by |
 |------|-------|---------|
-| `data/conference.yaml` | year, edition, dates, city, host, email, `registrationOpen` | header, hero, footer, `<title>`, meta description |
+| `data/conference.yaml` | year, edition, dates, city, host, email, `phase`, `registrationOpen` | header, hero, footer, `<title>`, meta description, JSON-LD |
 | `data/deadlines.yaml` | important dates | home + `/dates.html` |
 | `data/news.yaml` | news items, sorted by date in the template | home |
 | `data/committee.yaml` | `groups:` (committees) and `tpc:` | `/committees.html`, `/tpc_members.html` |
@@ -182,11 +182,31 @@ edited in one place only.
 | `data/stats.yaml` | the four numbers under "Fifty years of ICAT" | home |
 | `data/editions.yaml` | previous editions: year, ordinal, city, dates, site URL, IEEE Xplore link | `/editions.html` |
 | `data/history.yaml` | the "A brief history" milestones | `/about.html` |
+| `data/deadlines.yaml` | important dates; `due` is the ISO date used for sorting and for marking passed deadlines | home, `/dates.html` |
 
 Keynotes are the exception: each speaker is a file under
 `content/keynotes/` with YAML front matter, because each one gets its own page
 at `/keynotes/<file>.html`. The list page is `content/keynotes/_index.md`
 (`url: /keynotes.html`), rendered by `layouts/keynotes/list.html`.
+
+### Conference phase
+
+`data/conference.yaml` carries a `phase` field that changes the hero call to
+action, so nothing has to be edited in templates as the deadline approaches:
+
+| phase | hero button |
+|-------|-------------|
+| `cfp` | Call for papers |
+| `review` | Important dates |
+| `programme` | See the programme |
+| `live` | Programme |
+| `past` | Previous editions |
+
+The countdown also handles the states on its own, using `startDate` and
+`endDate`; after the conference it prints "<name> has ended" instead of zeros.
+
+Deadlines carry a `due` date in ISO form next to the display text. Entries
+whose `due` has passed are dimmed and struck through automatically.
 
 How many items the home page shows is set in `hugo.toml`:
 

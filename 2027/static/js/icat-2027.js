@@ -36,12 +36,21 @@
     return n < 10 ? '0' + n : '' + n;
   }
 
-  function renderCountdown(el, target) {
-    var diff = target.getTime() - Date.now();
-    if (diff <= 0) {
-      el.innerHTML = '<div class="icat-countdown-unit"><div class="number">0</div><div class="label">Started</div></div>';
+  function renderCountdown(el, start, end) {
+    var now = Date.now();
+    var name = el.getAttribute('data-event-name') || 'The conference';
+
+    if (end && now > end.getTime()) {
+      el.innerHTML = '<p class="icat-hero-status">' + name + ' has ended.</p>';
       return false;
     }
+
+    if (now >= start.getTime()) {
+      el.innerHTML = '<p class="icat-hero-status">' + name + ' is under way.</p>';
+      return false;
+    }
+
+    var diff = start.getTime() - now;
 
     var days = Math.floor(diff / 86400000);
     var hours = Math.floor((diff % 86400000) / 3600000);
@@ -59,12 +68,14 @@
 
   function startCountdowns() {
     document.querySelectorAll('[data-countdown]').forEach(function (el) {
-      var target = new Date(el.getAttribute('data-countdown'));
-      if (isNaN(target.getTime())) return;
+      var start = new Date(el.getAttribute('data-countdown'));
+      var endValue = el.getAttribute('data-countdown-end');
+      var end = endValue ? new Date(endValue) : null;
+      if (isNaN(start.getTime())) return;
 
-      if (renderCountdown(el, target)) {
+      if (renderCountdown(el, start, end)) {
         var timer = setInterval(function () {
-          if (!renderCountdown(el, target)) clearInterval(timer);
+          if (!renderCountdown(el, start, end)) clearInterval(timer);
         }, 1000);
       }
     });

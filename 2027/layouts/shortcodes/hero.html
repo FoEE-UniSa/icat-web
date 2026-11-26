@@ -1,5 +1,15 @@
 {{ $c := hugo.Data.conference }}
 {{ $p := partial "rel-prefix.html" .Page }}
+{{ $cta := dict "label" "Call for papers" "href" "calls.html" }}
+{{ if eq $c.phase "review" }}
+  {{ $cta = dict "label" "Important dates" "href" "dates.html" }}
+{{ else if eq $c.phase "programme" }}
+  {{ $cta = dict "label" "See the programme" "href" "program.html" }}
+{{ else if eq $c.phase "live" }}
+  {{ $cta = dict "label" "Programme" "href" "program.html" }}
+{{ else if eq $c.phase "past" }}
+  {{ $cta = dict "label" "Previous editions" "href" "editions.html" }}
+{{ end }}
 <section class="icat-hero">
 <div class="container">
 <div class="row">
@@ -12,7 +22,7 @@
 <span><i class="bi bi-geo-alt"></i>{{ $c.city }}</span>
 </p>
 
-<div id="icat-countdown" class="icat-countdown" data-countdown="{{ $c.startDate }}T09:00:00+02:00">
+<div id="icat-countdown" class="icat-countdown" data-countdown="{{ $c.startDate }}T09:00:00+02:00" data-countdown-end="{{ $c.endDate }}T18:00:00+02:00" data-event-name="{{ .Site.Title }}">
 <div class="icat-countdown-unit"><div class="number">--</div><div class="label">Days</div></div>
 <div class="icat-countdown-unit"><div class="number">--</div><div class="label">Hours</div></div>
 <div class="icat-countdown-unit"><div class="number">--</div><div class="label">Minutes</div></div>
@@ -20,7 +30,7 @@
 </div>
 
 <div class="d-flex flex-wrap gap-2 mt-4 icat-hero-actions">
-<a href="{{ $p }}calls.html" class="btn btn-primary btn-lg fw-semibold">Call for papers</a>
+<a href="{{ $p }}{{ $cta.href }}" class="btn btn-primary btn-lg fw-semibold">{{ $cta.label }}</a>
 {{ if $c.registrationOpen }}<a href="{{ $p }}registration.html" class="btn btn-outline-light btn-lg">Register</a>{{ end }}
 </div>
 </div>

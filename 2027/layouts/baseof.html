@@ -10,6 +10,7 @@
     {{ $p := partial "rel-prefix.html" . }}
     {{ $title := cond .IsHome (printf "%s · %s" .Site.Title $c.dates) (printf "%s · %s" .Title .Site.Title) }}
     {{ $description := .Description | default $c.description }}
+    {{ $image := printf "%s/images/og-2027.jpg" (strings.TrimSuffix "/" .Site.BaseURL) }}
 
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}">
@@ -22,7 +23,9 @@
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical }}">
-    <meta property="og:image" content="{{ strings.TrimSuffix "/" .Site.BaseURL }}/images/sarajevo.jpg">
+    <meta property="og:image" content="{{ $image }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="{{ $p }}favicon.png" type="image/png">
@@ -37,6 +40,32 @@
     <link href="{{ $p }}vendor/bootstrap/css/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ $p }}css/icat-2027.css" rel="stylesheet">
 
+    <script type="application/ld+json">
+    {{ dict
+        "@context" "https://schema.org"
+        "@type" "Event"
+        "name" (.Site.Title)
+        "description" $description
+        "startDate" $c.startDate
+        "endDate" $c.endDate
+        "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+        "eventStatus" "https://schema.org/EventScheduled"
+        "url" $canonical
+        "image" $image
+        "location" (dict
+            "@type" "Place"
+            "name" $c.city
+            "address" (dict
+                "@type" "PostalAddress"
+                "addressLocality" "Sarajevo"
+                "addressCountry" "BA"))
+        "organizer" (dict
+            "@type" "Organization"
+            "name" (printf "%s, %s" $c.hostName $c.hostParent)
+            "url" $c.hostUrl)
+    | jsonify (dict "indent" "  ") | safeJS }}
+    </script>
+
     <script>
         // Apply theme and mark JS as available before first paint.
         (function () {
@@ -49,8 +78,11 @@
 </head>
 
 <body>
+    <a class="icat-skip" href="#main">Skip to content</a>
     {{ partial "navbar.html" . }}
-    {{ block "main" . }}{{ end }}
+    <main id="main">
+        {{ block "main" . }}{{ end }}
+    </main>
     {{ partial "footer.html" . }}
 
     <script src="{{ $p }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

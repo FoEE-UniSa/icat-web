@@ -24,6 +24,14 @@ email: "icat@etf.unsa.ba"
 website: "http://icat.etf.unsa.ba"
 websiteLabel: "icat.etf.unsa.ba"
 
+# Where the conference is in its life cycle. Drives the hero call to action:
+#   cfp        call for papers open
+#   review     submissions closed, review running
+#   programme  programme published, registration open
+#   live       conference is running
+#   past       conference is over
+phase: cfp
+
 # Flip to true when the registration form goes live.
 # It unhides the Register button in the navigation and in the hero.
 registrationOpen: false

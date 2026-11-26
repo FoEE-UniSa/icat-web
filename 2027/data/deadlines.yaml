@@ -1,24 +1,39 @@
+# Important dates. `date` is what visitors read; `due` is the sortable
+# ISO date used for ordering and for dimming deadlines that have passed.
+# Month-only deadlines use the last day of that month.
+
 - label: Paper submission opens
   date: January 2027
+  due: "2027-01-31"
   variant: primary
   note: Submit your manuscript through the online system.
+
 - label: Paper submission deadline
   date: May 2027
+  due: "2027-05-31"
   variant: danger
   note: <strong>Hard deadline</strong>, no extensions.
+
 - label: Notification of acceptance
   date: July 2027
+  due: "2027-07-31"
   variant: success
   note: Authors informed by email within four weeks.
+
 - label: Camera-ready manuscript
   date: August 2027
+  due: "2027-08-31"
   variant: warning
   note: Final version + IEEE PDF eXpress validation.
+
 - label: Author registration deadline
   date: September 2027
+  due: "2027-09-30"
   variant: danger
   note: At least one author per paper must register.
+
 - label: Conference opens
   date: 13–15 October 2027
+  due: "2027-10-15"
   variant: primary
   note: Three-day programme starts in Sarajevo.

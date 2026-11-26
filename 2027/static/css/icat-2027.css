@@ -170,6 +170,38 @@ li code {
     background: rgb(var(--icat-primary-rgb) / 0.18);
 }
 
+/* ---------- Keyboard focus ---------- */
+
+:focus-visible {
+    outline: 2px solid var(--icat-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.icat-navbar :focus-visible,
+.card :focus-visible {
+    outline-offset: -2px;
+}
+
+.icat-skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    padding: 0.7rem 1.2rem;
+    background: var(--icat-surface);
+    color: var(--icat-text);
+    border: 1px solid var(--icat-primary);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.icat-skip:focus,
+.icat-skip:focus-visible {
+    left: 1rem;
+    top: 1rem;
+}
+
 /* ---------- Small shared pieces ---------- */
 
 .icat-label {
@@ -930,6 +962,16 @@ section.icat-section-alt .card {
     border-left-color: #4a6b4f;
 }
 
+.icat-date-card.past {
+    opacity: 0.55;
+}
+
+.icat-date-card.past .icat-date-label {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--icat-text-muted);
+}
+
 .icat-date-label {
     font-weight: 600;
 }
@@ -1291,4 +1333,89 @@ footer.icat-footer li i {
     background: var(--icat-primary);
     border-radius: 2px;
     margin: 0 auto 2rem;
+}
+
+/* ---------- Hero status (countdown replacing itself) ---------- */
+
+.icat-hero-status {
+    display: inline-block;
+    margin: 2rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 2px solid rgb(255 255 255 / 0.45);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: rgb(255 255 255 / 0.88);
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+
+    .icat-navbar,
+    footer.icat-footer,
+    .icat-hero-actions,
+    .icat-countdown,
+    .icat-hero-status,
+    .icat-cta-band,
+    .icat-social-links,
+    .icat-theme-toggle,
+    .icat-skip,
+    .icat-sponsor-grid {
+        display: none !important;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .icat-hero {
+        min-height: auto !important;
+        padding: 0 0 1rem !important;
+        background: none !important;
+        color: #000 !important;
+    }
+
+    .icat-hero h1,
+    .icat-hero .lead,
+    .icat-hero .icat-hero-kicker,
+    .icat-hero .icat-hero-meta {
+        color: #000 !important;
+    }
+
+    section.icat-section {
+        padding: 1rem 0 !important;
+        background: #fff !important;
+    }
+
+    .icat-prose > p,
+    .icat-prose > ul,
+    .icat-prose > ol,
+    .icat-prose > h2,
+    .icat-prose > h3,
+    .icat-date-card,
+    .icat-committee {
+        max-width: none !important;
+        margin-inline: 0 !important;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    .card,
+    .icat-stat,
+    .icat-date-card {
+        border: 1px solid #bbb !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    .js .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

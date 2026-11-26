@@ -1,10 +1,11 @@
-{{ $items := hugo.Data.deadlines }}
+{{ $items := sort hugo.Data.deadlines "due" }}
 {{ if not (.Get "all") }}
 {{ $limit := site.Params.home.deadlines | default 6 }}
 {{ $items = first $limit $items }}
 {{ end }}
 {{ range $items }}
-<div class="icat-date-card {{ .variant }}">
+{{ $past := false }}{{ with .due }}{{ $past = (time.AsTime .).Before now }}{{ end }}
+<div class="icat-date-card {{ .variant }}{{ if $past }} past{{ end }}">
 <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2">
 <span class="icat-date-label">{{ .label }}</span>
 <span class="icat-date-when">{{ .date }}</span>
