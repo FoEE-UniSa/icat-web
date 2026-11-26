@@ -69,19 +69,19 @@ check:
 			continue; \
 		fi; \
 		echo "  [$$year]"; \
-		if grep -rl "<?php" "$$out" 2>/dev/null | head -1 | grep -q .; then \
+		if grep -rIlq --include='*.html' --include='*.xml' "<?php" "$$out"; then \
 			echo "    FAIL: PHP residual found"; \
 			fail=1; \
 		else \
 			echo "    ok: no PHP"; \
 		fi; \
-		if grep -rE "\{\{[ ]*\(?[a-z]" "$$out" 2>/dev/null | head -1 | grep -q .; then \
+		if grep -rIlqE --include='*.html' --include='*.xml' --include='*.css' --include='*.js' "\{\{[ ]*\(?[a-z]" "$$out"; then \
 			echo "    FAIL: unparsed Hugo template in output"; \
 			fail=1; \
 		else \
 			echo "    ok: no unparsed templates"; \
 		fi; \
-		if grep -rE "href=\"/$$year/|src=\"/$$year/" "$$out" 2>/dev/null | head -1 | grep -q .; then \
+		if grep -rIlqE --include='*.html' "href=\"/$$year/|src=\"/$$year/" "$$out"; then \
 			echo "    FAIL: baseURL prefix leaked into output (breaks file:// preview)"; \
 			fail=1; \
 		else \

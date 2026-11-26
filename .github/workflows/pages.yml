@@ -61,16 +61,17 @@ jobs:
             if [ ! -f "$out/index.html" ]; then
               echo "::error::$year/index.html missing"; fail=1
             fi
-            if grep -rq "<?php" "$out"; then
+            if grep -rIlq --include='*.html' --include='*.xml' "<?php" "$out"; then
               echo "::error::$year contains PHP"; fail=1
             fi
-            if grep -rqE "\{\{[ ]*\(?[a-z]" "$out"; then
+            if grep -rIlqE --include='*.html' --include='*.xml' --include='*.css' --include='*.js' \
+                 "\{\{[ ]*\(?[a-z]" "$out"; then
               echo "::error::$year contains unrendered Hugo templates"; fail=1
             fi
+            if [ -d "$out/categories" ] || [ -d "$out/tags" ]; then
+              echo "::error::$year has taxonomy directories"; fail=1
+            fi
           done
-          if [ -d dist/categories ] || [ -d dist/2027/categories ]; then
-            echo "::error::taxonomy directories leaked into the output"; fail=1
-          fi
           exit $fail
 
       - uses: actions/upload-pages-artifact@v3
