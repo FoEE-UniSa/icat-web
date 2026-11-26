@@ -1,0 +1,8 @@
+<dl class="icat-history">
+{{ range hugo.Data.history }}
+<div>
+<dt>{{ .year }}</dt>
+<dd>{{ .text | markdownify }}</dd>
+</div>
+{{ end }}
+</dl>

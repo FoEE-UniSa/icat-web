@@ -1,0 +1,20 @@
+# Milestones shown under "A brief history" on the About page.
+# `text` is rendered as markdown.
+
+- year: 1973
+  text: "A symposium on informatics under the name *Informatika Jahorina*, held in the mountains above Sarajevo, with international interest from its very first edition."
+
+- year: 1999
+  text: "Renamed *International Symposium on Information and Communication Technologies* (ICT), bringing telecommunications into scope."
+
+- year: 2005
+  text: "Broadened further to include automatic control theory and practice. The conference becomes ICAT."
+
+- year: 2007
+  text: "One of the first conferences in the region to hold an online session for remote participants."
+
+- year: 2009
+  text: "Papers begin appearing in IEEE Xplore®, with technical sponsorship from IEEE Control Systems Society and ACM."
+
+- year: 2013
+  text: "Re-established as a full-fledged conference, with a size and reach that match the growth of the field itself."

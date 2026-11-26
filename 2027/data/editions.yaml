@@ -32,6 +32,7 @@
   dates: "16–18 June 2022"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/9810982/proceeding"
+  archive: "https://web.archive.org/web/20221002154443/https://icat.etf.unsa.ba/"
 
 - year: 2019
   edition: "27th"
@@ -39,6 +40,7 @@
   dates: "20–23 October 2019"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/8932650/proceeding"
+  archive: "https://web.archive.org/web/20190109033202/http://icat.etf.unsa.ba/icat-2019/cms/"
 
 - year: 2017
   edition: "26th"
@@ -46,6 +48,7 @@
   dates: "26–28 October 2017"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/8125633/proceeding"
+  archive: "https://web.archive.org/web/20170309215749/http://icat.etf.unsa.ba/icat-2017/cms"
 
 - year: 2015
   edition: "25th"
@@ -53,6 +56,7 @@
   dates: "29–31 October 2015"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/7331833/proceeding"
+  archive: "https://web.archive.org/web/20150205011318/http://icat.etf.unsa.ba/icat-2015/cms"
 
 - year: 2013
   edition: "24th"
@@ -60,6 +64,7 @@
   dates: "30 October – 1 November 2013"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/6675893/proceeding"
+  archive: "https://web.archive.org/web/20130130184924/http://icat.etf.unsa.ba/icat-2013/cms/"
 
 - year: 2011
   edition: "23rd"
@@ -67,6 +72,7 @@
   dates: "27–29 October 2011"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/6093619/proceeding"
+  archive: "https://web.archive.org/web/20110227045232/http://icat.etf.unsa.ba/icat-2011/cms/"
 
 - year: 2009
   edition: "22nd"
@@ -74,6 +80,7 @@
   dates: "29–31 October 2009"
   city: "Sarajevo, Bosnia and Herzegovina"
   xplore: "https://ieeexplore.ieee.org/xpl/conhome/5340905/proceeding"
+  archive: "https://web.archive.org/web/20090202095117/http://icat.etf.unsa.ba/icat-2009/index.php"
 
 - year: 2007
   edition: "21st"

@@ -737,6 +737,39 @@ section.icat-section-alt .card {
     text-align: right;
 }
 
+/* ---------- History timeline ---------- */
+
+.icat-history {
+    margin: 1.5rem 0;
+}
+
+.icat-history > div {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--icat-border);
+}
+
+.icat-history > div:last-child {
+    border-bottom: 1px solid var(--icat-border);
+}
+
+.icat-history dt {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--icat-primary);
+}
+
+.icat-history dd {
+    margin: 0;
+    color: var(--icat-text);
+}
+
+.icat-history dd p {
+    margin: 0;
+}
+
 /* ---------- Previous editions ---------- */
 
 .icat-edition-list {
