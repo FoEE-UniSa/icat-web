@@ -5,8 +5,4 @@ title: "Important Dates"
 
 {{< deadlines all="true" >}}
 
-<div class="alert alert-info mt-4">
-<i class="bi bi-info-circle"></i> Dates will be confirmed in the official Call for Papers. Subscribe to the mailing list or follow our social channels for updates.
-</div>
-
 {{< /section >}}

@@ -20,7 +20,7 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 {{< /section >}}
 
 <!-- Keynotes preview -->
-{{< section id="keynotes" alt="true" eyebrow="Plenary & invited talks" heading="Headline speakers" lede="The plenary programme is being finalised. Announcements will appear here as speakers are confirmed." >}}
+{{< section id="keynotes" alt="true" eyebrow="Plenary & invited talks" heading="Headline speakers" >}}
 
 {{< keynotes-preview >}}
 
@@ -48,7 +48,7 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 {{< /section >}}
 
 <!-- Venue -->
-{{< section id="venue" eyebrow="Where we meet" heading="Sarajevo" lede="The 31st edition takes place in Sarajevo. The venue and negotiated hotel rates are announced with the second call for papers." alt="true" >}}
+{{< section id="venue" eyebrow="Where we meet" heading="Sarajevo" lede="The 31st edition takes place in Sarajevo." alt="true" >}}
 
 <div class="row g-5">
 <div class="col-lg-7">
@@ -60,7 +60,7 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 </div>
 <div class="col-lg-5">
 <dl class="icat-facts">
-<div><dt>Venue</dt><dd>Announced with the second call</dd></div>
+<div><dt>Venue</dt><dd>Details to be announced</dd></div>
 <div><dt>Airport</dt><dd>SJJ, 12 km from the centre</dd></div>
 <div><dt>Currency</dt><dd>BAM, fixed at 1.95583 per EUR</dd></div>
 <div><dt>Time zone</dt><dd>Central European Time (GMT+1)</dd></div>

@@ -1,9 +1,9 @@
 ---
 title: "Venue"
 ---
-{{< section id="venue" eyebrow="Where we meet" heading="Conference venue" lede="All sessions, workshops and the welcome reception take place in central Sarajevo." >}}
+{{< section id="venue" eyebrow="Where we meet" heading="Conference venue" >}}
 
-The 31st ICAT will be hosted in central Sarajevo. The exact venue and negotiated accommodation options will be announced in the second call for papers.
+Details to be announced.
 
 ## About Sarajevo
 

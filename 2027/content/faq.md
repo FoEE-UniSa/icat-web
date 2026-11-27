@@ -5,7 +5,7 @@ title: "FAQ"
 
 ### When and where is the conference?
 
-13–15 October 2027 in Sarajevo, Bosnia and Herzegovina. The venue and negotiated hotel rates are announced with the second call for papers. See the [venue page](venue.html).
+13–15 October 2027 in Sarajevo, Bosnia and Herzegovina. Details to be announced. See the [venue page](venue.html).
 
 ### Is ICAT online or in person?
 

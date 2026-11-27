@@ -3,7 +3,7 @@ title: "Workshops"
 ---
 {{< section id="workshops" eyebrow="Hands-on sessions" heading="Workshops" lede="Half-day, in-depth sessions focused on emerging tools, methods, and applications. Workshop proposals are welcome." >}}
 
-Workshops for ICAT 2027 will be held on the afternoon of the first conference day and on the morning of the last day. Each workshop is a half-day, interactive session led by domain experts. The full workshop programme will be announced once the call for workshop proposals closes.
+Workshops for ICAT 2027 will be held on the afternoon of the first conference day and on the morning of the last day. Each workshop is a half-day, interactive session led by domain experts. Details to be announced.
 
 ## Tentative workshop themes
 
