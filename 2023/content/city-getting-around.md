@@ -51,19 +51,19 @@ title: "Getting around the City"
 <div>Beebee doo Sarajevo</div>
 <div>Ul. Branislava Nušića 160 Sarajevo</div>
 <div><a href="https://beebee.buzz/" rel="noopener" target="_blank">https://beebee.buzz/</a><br>
-    <div>BeeBee e-scooters – A brilliant opportunity for the way forward<br><br>Riding a Beebee scooter is the perfect
+<div>BeeBee e-scooters – A brilliant opportunity for the way forward<br><br>Riding a Beebee scooter is the perfect
         way to get around the city, while sparing it from both noise and pollution. A great thing about ride a Beebee
         is that you can ride as good as all over and park almost anywhere in the city. But it's important to remember
         that the streets belong to everyone.<br>Get rolling in no time by following the simple steps below.
-    </div>
+</div>
 
-    <ol>
-        <li>Download the Beebee app and register with your mobile number., add a bank card, buy beebee credits</li>
-        <li>Locate an available scooter nearby using the map function in the app.</li>
-        <li>Scan the QR code of the scooter to unlock it.</li>
-        <li>Hop on the scooter and push off with your foot a few times to get it rolling before you use the throttle.</li>
-        <li>End your ride in the app to make the scooter available for someone else.</li>
-    </ol>
-    <p>Get a day pass or a week subscription and take as many Beebee rides as you want for a fixed price.<br><br>Price:
+<ol>
+<li>Download the Beebee app and register with your mobile number., add a bank card, buy beebee credits</li>
+<li>Locate an available scooter nearby using the map function in the app.</li>
+<li>Scan the QR code of the scooter to unlock it.</li>
+<li>Hop on the scooter and push off with your foot a few times to get it rolling before you use the throttle.</li>
+<li>End your ride in the app to make the scooter available for someone else.</li>
+</ol>
+<p>Get a day pass or a week subscription and take as many Beebee rides as you want for a fixed price.<br><br>Price:
         0.99 KM for unlock + 0.20 KM/min</p>
 </div>

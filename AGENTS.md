@@ -132,6 +132,7 @@ Two helpers exist for this and must be used instead of manual `../`:
 | News items on the home page | `2027/data/news.yaml` |
 | Committees and TPC | `2027/data/committee.yaml` |
 | The four numbers under "Fifty years of ICAT" | `2027/data/stats.yaml` |
+| Registration fees | `2027/data/fees.yaml` |
 | Sponsors and technical co-sponsors | `2027/data/sponsors.yaml` |
 | Previous editions and their IEEE Xplore links | `2027/data/editions.yaml` |
 | The "A brief history" timeline | `2027/data/history.yaml` |
@@ -156,6 +157,7 @@ once; every page that shows it updates.
 | `news.yaml` | list of `{date, title, link, description}`, newest first |
 | `committee.yaml` | `groups:` and `tpc:`, each a list of `{heading, members: [{name, affiliation}]}` |
 | `stats.yaml` | list of `{value, label}` |
+| `fees.yaml` | `categoryLabel`, `earlyLabel`, `lateLabel`, `note`, and `categories: [{name, early, late}]` |
 | `sponsors.yaml` | `technical:` and `sponsors:`, each with `enabled`, `heading`, optional `lede` and `note`, and `items: [{name, logo, url}]` |
 | `editions.yaml` | list of `{year, edition, kind, dates, city, url, xplore, archive}` |
 | `history.yaml` | list of `{year, text}`; `text` is markdown |
@@ -193,6 +195,14 @@ email: ada@example.org         # optional
 The list page is `2027/content/keynotes/_index.md`, which keeps the flat URL
 `/keynotes.html` through `url:` in its front matter.
 
+### Registration
+
+Registration is handled through the conference submission system, not a
+separate form, so `/registration.html` explains the process and shows the fee
+table instead of a signup. `registrationOpen` in `conference.yaml` unhides the
+Register button in the navigation and the hero once the system is open; until
+then the page says so and offers no link.
+
 ### Conference phase
 
 `phase` in `conference.yaml` changes the hero button; templates are never
@@ -223,6 +233,7 @@ The countdown reads `startDate` and `endDate` on its own and switches to
 | `{{< timeline-item >}}` | One row of the schedule |
 | `{{< panel >}}` | Round-table block |
 | `{{< stats >}}` | Numbers from `data/stats.yaml` |
+| `{{< fee-table >}}` | Registration fees from `data/fees.yaml` |
 | `{{< sponsors-section >}}` | Both sponsor groups, each behind its own switch |
 | `{{< organizers >}}` | "Organized by" band |
 | `{{< edition-list >}}` | The table on `/editions.html` |

@@ -95,7 +95,7 @@ ICAT brings researchers, practitioners and students from a dozen countries to Sa
 <p class="mb-4">Full papers, posters, workshop and tutorial proposals.</p>
 <div class="d-flex flex-wrap justify-content-center gap-2">
 <a href="calls.html" class="btn btn-light fw-semibold">View the call for papers</a>
-<a href="registration.html" class="btn btn-outline-light">Register your interest</a>
+<a href="registration.html" class="btn btn-outline-light">Registration &amp; fees</a>
 </div>
 </div>
 

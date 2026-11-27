@@ -1,0 +1,29 @@
+# Registration fees.
+# The amounts are carried over from ICAT 2025 — replace them when the 2027
+# rates are set. Everything here is display text, so keep the currency symbol
+# in the value.
+
+categoryLabel: "Attendee category"
+earlyLabel: "Early"
+lateLabel: "Late"
+note: "Fees are confirmed with the call for papers."
+
+categories:
+  - name: Non-IEEE Member
+    early: "€220"
+    late: "€320"
+  - name: IEEE Member
+    early: "€200"
+    late: "€300"
+  - name: Members of Sponsor Societies
+    early: "€180"
+    late: "€280"
+  - name: "Student: Non-IEEE Member + Paper"
+    early: "€130"
+    late: "€150"
+  - name: "Student: IEEE Member + Paper"
+    early: "€100"
+    late: "€120"
+  - name: Student
+    early: "Free"
+    late: "€50"

@@ -1,0 +1,22 @@
+{{ $f := hugo.Data.fees }}
+<div class="table-responsive">
+<table class="table icat-fees align-middle">
+<thead>
+<tr>
+<th scope="col">{{ $f.categoryLabel }}</th>
+<th scope="col" class="text-end">{{ $f.earlyLabel }}</th>
+<th scope="col" class="text-end">{{ $f.lateLabel }}</th>
+</tr>
+</thead>
+<tbody>
+{{ range $f.categories }}
+<tr>
+<th scope="row" class="fw-normal">{{ .name }}</th>
+<td class="text-end">{{ .early }}</td>
+<td class="text-end">{{ .late }}</td>
+</tr>
+{{ end }}
+</tbody>
+</table>
+</div>
+{{ with $f.note }}<p class="small mt-2">{{ . }}</p>{{ end }}
