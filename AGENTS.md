@@ -198,10 +198,9 @@ The list page is `2027/content/keynotes/_index.md`, which keeps the flat URL
 ### Registration
 
 Registration is handled through the conference submission system, not a
-separate form, so `/registration.html` explains the process and shows the fee
-table instead of a signup. `registrationOpen` in `conference.yaml` unhides the
-Register button in the navigation and the hero once the system is open; until
-then the page says so and offers no link.
+separate form, so `/registration.html` states that and shows the fee table
+instead of a signup. `registrationOpen` in `conference.yaml` unhides the
+Register button in the navigation and the hero once the system is open.
 
 ### Conference phase
 

@@ -6,7 +6,6 @@
 categoryLabel: "Attendee category"
 earlyLabel: "Early"
 lateLabel: "Late"
-note: "Fees are confirmed with the call for papers."
 
 categories:
   - name: Non-IEEE Member
