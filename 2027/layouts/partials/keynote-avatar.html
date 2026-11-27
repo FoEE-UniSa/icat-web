@@ -1,0 +1,10 @@
+{{- /* Speaker image: the photo when there is one, a neutral icon otherwise.
+       Call with (dict "item" $page "prefix" $prefix "big" true) */ -}}
+{{- $item := .item -}}
+{{- $prefix := .prefix -}}
+{{- $big := .big -}}
+{{- if $item.Params.photo -}}
+<img src="{{ $prefix }}{{ $item.Params.photo }}" alt="" class="speaker-photo{{ if $big }} speaker-photo-lg{{ end }}">
+{{- else -}}
+<span class="speaker-photo speaker-avatar{{ if $big }} speaker-photo-lg{{ end }}" aria-hidden="true"><i class="bi bi-person"></i></span>
+{{- end -}}

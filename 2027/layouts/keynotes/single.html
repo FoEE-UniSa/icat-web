@@ -24,11 +24,9 @@
 {{ .Content }}
 </div>
 </div>
-{{ with .Params.photo }}
 <div class="col-lg-4 order-first order-lg-last">
-<img src="{{ $p }}{{ . }}" alt="" class="speaker-photo speaker-photo-lg">
+{{ partial "keynote-avatar.html" (dict "item" . "prefix" $p "big" true) }}
 </div>
-{{ end }}
 </div>
 </div>
 </section>
