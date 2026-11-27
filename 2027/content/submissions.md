@@ -22,7 +22,7 @@ Authors are expected to submit only their own original work that is not currentl
 
 ## Camera-Ready Manuscript Submission
 
-Final versions of accepted papers must be uploaded to the conference submission system (EDAS) for inclusion in the conference proceedings and to be submitted to IEEE Xplore®. **The deadline is August 2027 (hard deadline).**
+Final versions of accepted papers must be uploaded to the conference submission system (<a href="https://edas.info/">EDAS</a>) for inclusion in the conference proceedings and to be submitted to IEEE Xplore®. **The deadline is August 2027 (hard deadline).**
 
 IEEE maintains strict formatting standards for all manuscripts published in the IEEE Xplore® Digital Library.
 
@@ -31,7 +31,7 @@ IEEE maintains strict formatting standards for all manuscripts published in the 
 Below are the instructions to submit the camera-ready manuscript.
 
 - Please read the reviews of your paper and follow the reviewers' recommendations for revising it and preparing the final version. When you are done with the revision, please print out your paper and carefully proofread it.
-- Validate your manuscript using IEEE PDF eXpress. Any changes made to a PDF after IEEE PDF eXpress conversion or PDF checking may invalidate Xplore compatibility. All PDFs to be included in IEEE Xplore® should be validated through PDF eXpress for Xplore compatibility.
+- Validate your manuscript using <a href="https://ieee-pdf-express.org/">IEEE PDF eXpress</a>. Any changes made to a PDF after IEEE PDF eXpress conversion or PDF checking may invalidate Xplore compatibility. All PDFs to be included in IEEE Xplore® should be validated through PDF eXpress for Xplore compatibility.
 
 ### Instructions for IEEE PDF eXpress
 
@@ -49,7 +49,9 @@ Continue to enter information as prompted. An online confirmation will be displa
 
 When you complete the online copyright transfer process and submit the form, you will receive an automated confirmation email letting you know that the copyright sign has been completed successfully.
 
-Submit your validated PDF to EDAS.
+<p class="mt-4 mb-0">
+<a href="#" class="btn btn-primary"><i class="bi bi-file-earmark-arrow-up"></i> Submit your validated PDF to EDAS</a>
+</p>
 
 <div class="alert alert-danger mt-4">
 <strong>Important.</strong> If you fail to strictly follow all the above guidelines, IEEE may refuse to index your manuscript in IEEE Xplore, even though that work may already have been accepted at the conference for oral presentation.
