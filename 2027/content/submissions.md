@@ -1,35 +1,62 @@
 ---
 title: "Submission Guidelines"
 ---
-{{< section id="submissions" eyebrow="For authors" heading="Submission guidelines" lede="How to prepare and submit a manuscript for ICAT 2027." >}}
+{{< section id="submissions" eyebrow="For authors" heading="Submission guidelines" >}}
 
-## Before you write
+## Instructions for Authors
 
-- Papers must be written in **English**.
-- Full paper length: **up to 6 proceedings pages** (IEEE double-column, A4), including figures.
-- Two additional pages may be purchased for an extra fee.
-- Manuscripts must report **original, completed and unpublished** work not under review elsewhere.
+Papers must be written in **English**. Full paper length (up to 6 proceedings pages), including figures, is allowed for each paper. Papers should follow the **IEEE double-column format (A4)**. Additional two (2) pages can be included for an extra fee.
 
-## Formatting
+Standard IEEE conference templates are found here:
 
-Use the official <a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html">IEEE conference templates</a> from the start. Converting late is where formatting bugs are born. Detailed guidance for IEEE IES conferences is also available.
+- <a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html">IEEE conference template</a>
 
-## Submitting
+Detailed guidelines for creating manuscripts are found here:
 
-1. Prepare your manuscript as a **PDF** using the IEEE template.
-2. Submit through the online system before the deadline. Only PDFs are accepted.
-3. Watch for the originality check. Manuscripts are compared against millions of records worldwide.
-4. Wait for notification (four weeks after the deadline).
+- <a href="http://www.ieee-ies.org/conferences/paper-format-for-conferences">Creating Manuscripts for IEEE IES Conferences</a>
 
-## If accepted
+Authors are expected to submit only their own original work that is not currently under review somewhere else. The conference verifies the originality of manuscripts by comparing them with millions of other articles in databases worldwide. Manuscripts that violate IEEE's publication principles may be rejected. If the violation is deemed severe, disciplinary actions may also be taken by IEEE.
 
-- Revise following reviewer comments and prepare the **camera-ready** version.
-- Validate through **IEEE PDF eXpress** (conference ID will be announced).
-- Sign the **copyright form** electronically in the submission system.
-- **At least one author must register** before the camera-ready deadline.
+- <a href="https://www.ieee.org/publications_standards/publications/rights/plagiarism.html">IEEE Policy on Plagiarism</a>
+- <a href="https://www.ieee.org/publications_standards/publications/rights/Multi_Sub_Guidelines_Intro.html">IEEE Policy on Double Submission</a>
+
+## Camera-Ready Manuscript Submission
+
+Final versions of accepted papers must be uploaded to the conference submission system (EDAS) for inclusion in the conference proceedings and to be submitted to IEEE Xplore®. **The deadline is August 2027 (hard deadline).**
+
+IEEE maintains strict formatting standards for all manuscripts published in the IEEE Xplore® Digital Library.
+
+**Registration is required for all participants of ICAT 2027.**
+
+Below are the instructions to submit the camera-ready manuscript.
+
+- Please read the reviews of your paper and follow the reviewers' recommendations for revising it and preparing the final version. When you are done with the revision, please print out your paper and carefully proofread it.
+- Validate your manuscript using IEEE PDF eXpress. Any changes made to a PDF after IEEE PDF eXpress conversion or PDF checking may invalidate Xplore compatibility. All PDFs to be included in IEEE Xplore® should be validated through PDF eXpress for Xplore compatibility.
+
+### Instructions for IEEE PDF eXpress
+
+**First-time users:** enter the following information:
+
+1. **Conference ID:** to be announced
+2. Your email address
+3. A password
+
+Continue to enter information as prompted. An online confirmation will be displayed, and an email confirmation will be sent verifying your account setup.
+
+**Previous users:** follow the above steps but enter the same password that was used for previous conferences. Verify that your contact information is valid.
+
+## Final Steps
+
+When you complete the online copyright transfer process and submit the form, you will receive an automated confirmation email letting you know that the copyright sign has been completed successfully.
+
+Submit your validated PDF to EDAS.
 
 <div class="alert alert-danger mt-4">
-<strong>Important.</strong> If you fail to strictly follow the guidelines, IEEE may refuse to index your manuscript in IEEE Xplore, even if the work was accepted for oral presentation.
+<strong>Important.</strong> If you fail to strictly follow all the above guidelines, IEEE may refuse to index your manuscript in IEEE Xplore, even though that work may already have been accepted at the conference for oral presentation.
+</div>
+
+<div class="alert alert-info mt-4">
+Please note that the authors are required to electronically sign the copyright form in the online submission system after submitting final versions of their paper.
 </div>
 
 {{< /section >}}

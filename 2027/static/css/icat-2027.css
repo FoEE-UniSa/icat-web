@@ -662,7 +662,7 @@ section.icat-section-alt {
 
 .alert-danger {
     border-left-color: var(--icat-primary);
-    background: var(--icat-accent-soft);
+    border-left-width: 3px;
 }
 
 .alert-info {
