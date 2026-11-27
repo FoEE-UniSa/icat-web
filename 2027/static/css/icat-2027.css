@@ -1457,3 +1457,17 @@ footer.icat-footer li i {
         transform: none !important;
     }
 }
+
+/* ---------- Round table ---------- */
+
+.icat-panel-next {
+    border-left: 3px solid var(--icat-primary);
+    background: var(--icat-surface-2);
+    border-radius: 4px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 2.5rem;
+}
+
+.icat-panel-next .icat-section-eyebrow {
+    margin-bottom: 0.2rem;
+}

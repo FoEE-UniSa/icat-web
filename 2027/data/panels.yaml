@@ -1,0 +1,31 @@
+# Round tables, newest first.
+#   pending: true  -> rendered as "Details to be announced" at the top
+#
+# 2015, 2017 and 2019 were taken from the archived conference programmes
+# (icat.etf.unsa.ba/icat-2015, -2017, -2019). 2009-2013 and 2022 had none.
+
+- year: 2027
+  pending: true
+
+- year: 2025
+  title: "Artificial Intelligence vs Augmented Intelligence"
+  moderators: "Kemal A. Delić, Maja Vuković"
+  panelists: "Jeffrey H. Johnson (The Open University, UK), Anca Sailer (IBM TJ Watson, USA), Paolo Faraboschi (HPE AI Labs, USA), Jeff A. Riley (Monash University, Australia)"
+
+- year: 2023
+  title: "AI: Future Trends and Challenges"
+  moderators: "Senka Krivić"
+  panelists: "David Abbink (Delft University of Technology), Petar Popovski (Aalborg University), Abdulhamit Subasi (University of Turku), Migdat Hodžić (ARTI Analytics)"
+
+- year: 2019
+  title: "Underwater robotics: on architectures and technologies"
+  moderators: "Kemal A. Delić"
+  panelists: "Zoran Vukić (Croatia), Gianluca Antonelli (Italy), Bill Kirkwood (USA), Mandar Chitre (Singapore)"
+
+- year: 2017
+  title: "On Hyperscale Systems"
+  moderators: "Kemal A. Delić, Martin A. Walker"
+
+- year: 2015
+  title: "On Big Data and Digital Economy"
+  moderators: "Kemal Delić"

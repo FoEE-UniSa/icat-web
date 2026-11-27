@@ -1,0 +1,20 @@
+{{ range hugo.Data.panels }}{{ if .pending }}
+<div class="icat-panel-next">
+<div class="icat-section-eyebrow">ICAT {{ .year }}</div>
+<p class="mb-0">Details to be announced.</p>
+</div>
+{{ end }}{{ end }}
+
+<h2>Previous round tables</h2>
+<ul class="icat-edition-list">
+{{ range hugo.Data.panels }}{{ if not .pending }}
+<li>
+<span class="icat-edition-year">{{ .year }}</span>
+<span class="icat-edition-body">
+<span class="icat-edition-title">{{ .title }}</span>
+{{ with .moderators }}<span class="icat-edition-meta">{{ if strings.Contains . "," }}Moderators{{ else }}Moderator{{ end }}: {{ . }}</span>{{ end }}
+{{ with .panelists }}<span class="icat-edition-meta">{{ . }}</span>{{ end }}
+</span>
+</li>
+{{ end }}{{ end }}
+</ul>

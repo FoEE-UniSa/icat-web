@@ -133,6 +133,7 @@ Two helpers exist for this and must be used instead of manual `../`:
 | Committees and TPC | `2027/data/committee.yaml` |
 | The four numbers under "Fifty years of ICAT" | `2027/data/stats.yaml` |
 | Registration fees | `2027/data/fees.yaml` |
+| Round tables, current and past | `2027/data/panels.yaml` |
 | Sponsors and technical co-sponsors | `2027/data/sponsors.yaml` |
 | Previous editions and their IEEE Xplore links | `2027/data/editions.yaml` |
 | The "A brief history" timeline | `2027/data/history.yaml` |
@@ -158,6 +159,7 @@ once; every page that shows it updates.
 | `committee.yaml` | `groups:` and `tpc:`, each a list of `{heading, members: [{name, affiliation}]}` |
 | `stats.yaml` | list of `{value, label}` |
 | `fees.yaml` | `categoryLabel`, `earlyLabel`, `lateLabel`, `note`, and `categories: [{name, early, late}]` |
+| `panels.yaml` | list of `{year, title, moderators, panelists}`; `pending: true` renders as "Details to be announced" |
 | `sponsors.yaml` | `technical:` and `sponsors:`, each with `enabled`, `heading`, optional `lede` and `note`, and `items: [{name, logo, url}]` |
 | `editions.yaml` | list of `{year, edition, kind, dates, city, url, xplore, archive}` |
 | `history.yaml` | list of `{year, text}`; `text` is markdown |
@@ -230,7 +232,7 @@ The countdown reads `startDate` and `endDate` on its own and switches to
 | `{{< deadlines >}}` | Dates from `data/deadlines.yaml`; `all="true"` ignores the home limit |
 | `{{< committee-list group="groups" >}}` | Committee block; `group="tpc"` for the TPC page |
 | `{{< timeline-item >}}` | One row of the schedule |
-| `{{< panel >}}` | Round-table block |
+| `{{< panel-list >}}` | Current round table plus the list of past ones from `data/panels.yaml` |
 | `{{< stats >}}` | Numbers from `data/stats.yaml` |
 | `{{< fee-table >}}` | Registration fees from `data/fees.yaml` |
 | `{{< sponsors-section >}}` | Both sponsor groups, each behind its own switch |
