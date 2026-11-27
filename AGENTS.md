@@ -194,6 +194,9 @@ email: ada@example.org         # optional
 ...
 ```
 
+`photo` is optional. Without it the card and the page show a neutral person
+icon in the same box the photo would occupy.
+
 The list page is `2027/content/keynotes/_index.md`, which keeps the flat URL
 `/keynotes.html` through `url:` in its front matter.
 
