@@ -159,7 +159,7 @@ once; every page that shows it updates.
 | `committee.yaml` | `groups:` and `tpc:`, each a list of `{heading, members: [{name, affiliation}]}` |
 | `stats.yaml` | list of `{value, label}` |
 | `fees.yaml` | `categoryLabel`, `earlyLabel`, `lateLabel`, `note`, and `categories: [{name, early, late}]` |
-| `panels.yaml` | list of `{year, title, moderators, panelists}`; `pending: true` renders as "Details to be announced" |
+| `panels.yaml` | round tables: `{year, title, moderators, panelists}`; `pending: true` renders as "Details to be announced" |
 | `sponsors.yaml` | `technical:` and `sponsors:`, each with `enabled`, `heading`, optional `lede` and `note`, and `items: [{name, logo, url}]` |
 | `editions.yaml` | list of `{year, edition, kind, dates, city, url, xplore, archive}` |
 | `history.yaml` | list of `{year, text}`; `text` is markdown |

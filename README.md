@@ -80,7 +80,7 @@ For ICAT 2027 almost nothing is edited in templates.
 | To change | Edit |
 |-----------|------|
 | Dates, city, edition, email, registration switch | `2027/data/conference.yaml` |
-| Deadlines, news, committees, sponsors, stats, fees, previous editions, history | `2027/data/*.yaml` |
+| Deadlines, news, committees, round tables, sponsors, stats, fees, previous editions, history | `2027/data/*.yaml` |
 | Text of a page | `2027/content/<page>.md` |
 | A keynote speaker | `2027/content/keynotes/<slug>.md` |
 | Colours and typography | `2027/static/css/icat-2027.css` |
