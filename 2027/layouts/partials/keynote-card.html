@@ -7,7 +7,7 @@
 <div class="card-body p-4">
 <div class="icat-speaker-main">
 <div class="mb-3">{{ partial "keynote-avatar.html" (dict "item" $item "prefix" $prefix) }}</div>
-<h3 class="h5 fw-bold mb-1"><a class="stretched-link text-reset" href="{{ $url }}">{{ $item.Params.name | default $item.Title }}</a></h3>
+<h2 class="h5 fw-bold mb-1"><a class="stretched-link text-reset" href="{{ $url }}">{{ $item.Params.name | default $item.Title }}</a></h3>
 {{ if or $item.Params.role $item.Params.affiliation }}<p class="icat-speaker-meta mb-3">{{ with $item.Params.role }}{{ . }}{{ end }}{{ if and $item.Params.role $item.Params.affiliation }}<br>{{ end }}{{ with $item.Params.affiliation }}{{ . }}{{ end }}</p>{{ end }}
 {{ with $item.Params.talk }}<p class="mb-0"><em>{{ . }}</em></p>{{ end }}
 </div>

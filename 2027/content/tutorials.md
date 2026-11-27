@@ -31,6 +31,6 @@ Tutorial proposals should include:
 - A short outline of the material to be covered
 - Any software, data, or hardware requirements
 
-Send proposals to <a href="mailto:icat@etf.unsa.ba?subject=ICAT 2027 Tutorial Proposal">icat@etf.unsa.ba</a> with the subject *ICAT 2027 Tutorial Proposal*.
+Send proposals to [icat@etf.unsa.ba](mailto:icat@etf.unsa.ba?subject=ICAT%202027%20Tutorial%20Proposal) with the subject *ICAT 2027 Tutorial Proposal*.
 
 {{< /section >}}

@@ -270,6 +270,22 @@ those editions also live at the site root.
 
 ---
 
+## Accessibility
+
+The 2027 site scores 100 in Lighthouse accessibility. Keep it there:
+
+- One `<h1>` per page, and heading levels never skip. The page title is an
+  `h1`; sections are `h2`, cards inside them `h3`. Footer column titles are
+  `h2` for the same reason.
+- Links inside running text are underlined by `icat-2027.css`, because colour
+  alone is not an acceptable cue (WCAG 1.4.1).
+- Icon-only links need an `aria-label`; decorative images get `alt=""`.
+- The skip link, `:focus-visible` outline and the print stylesheet live in
+  `baseof.html` and the stylesheet — do not drop them.
+
+`hugo server` plus Lighthouse on `html/` is the quickest check. Anything under
+100 is a regression worth fixing before pushing.
+
 ## Checks
 
 ```bash

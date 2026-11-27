@@ -35,7 +35,7 @@ Nationals of the following states may enter BiH with a passport or a valid ident
 <img alt="Visa policy of Bosnia and Herzegovina" src="https://upload.wikimedia.org/wikipedia/commons/6/65/Visa_policy_of_Bosnia_and_Herzegovina.png" class="img-fluid border rounded-3">
 
 <div class="alert alert-info mt-4">
-<i class="bi bi-info-circle"></i> If you need an official invitation letter for your visa application, email <a href="mailto:icat@etf.unsa.ba">icat@etf.unsa.ba</a> after registering.
+<i class="bi bi-info-circle"></i> If you need an official invitation letter for your visa application, email [icat@etf.unsa.ba](mailto:icat@etf.unsa.ba) after registering.
 </div>
 
 {{< /section >}}

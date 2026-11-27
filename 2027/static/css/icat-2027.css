@@ -629,6 +629,16 @@ section.icat-section-alt {
     margin-bottom: 0;
 }
 
+/* Links inside running text need a cue that is not colour alone (WCAG 1.4.1). */
+.icat-prose p a:not(.btn):not(.stretched-link),
+.icat-prose li a:not(.btn):not(.stretched-link),
+.icat-prose dd a:not(.btn),
+.icat-prose td a:not(.btn) {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
 .icat-prose img {
     max-width: 100%;
     height: auto;
@@ -1051,7 +1061,7 @@ section.icat-section-alt .card {
     padding-left: 0.9rem;
 }
 
-.icat-news-list h5 {
+.icat-news-list h3 {
     font-weight: 600;
     font-size: 1rem;
     color: var(--icat-text);
@@ -1200,7 +1210,7 @@ footer.icat-footer {
     margin-top: 0;
 }
 
-footer.icat-footer h6 {
+footer.icat-footer h2 {
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.11em;
@@ -1316,8 +1326,8 @@ footer.icat-footer li i {
 
 .js .reveal {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .js .reveal.visible {
@@ -1377,7 +1387,7 @@ footer.icat-footer li i {
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
-    color: var(--icat-border);
+    color: var(--icat-text-muted);
     margin-bottom: 1rem;
 }
 

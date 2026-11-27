@@ -26,6 +26,6 @@ Researchers and practitioners are invited to propose half-day workshops on topic
 - Target audience and assumed background
 - List of potential contributors
 
-Proposals can be sent to <a href="mailto:icat@etf.unsa.ba?subject=ICAT 2027 Workshop Proposal">icat@etf.unsa.ba</a>.
+Proposals can be sent to [icat@etf.unsa.ba](mailto:icat@etf.unsa.ba?subject=ICAT%202027%20Workshop%20Proposal).
 
 {{< /section >}}

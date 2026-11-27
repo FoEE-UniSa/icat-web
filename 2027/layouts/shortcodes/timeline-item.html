@@ -5,7 +5,7 @@
 {{ $kind := .Get "kind" | default "" }}
 <div class="icat-timeline-item">
 <div class="icat-timeline-time">{{ $time }}</div>
-<h4 class="icat-timeline-title">{{ $title }}{{ if eq $kind "keynote" }} <span class="icat-chip icat-chip-strong">Keynote</span>{{ end }}{{ if eq $kind "panel" }} <span class="icat-chip">Panel</span>{{ end }}{{ if eq $kind "break" }} <span class="icat-chip">Break</span>{{ end }}</h4>
+<h3 class="icat-timeline-title">{{ $title }}{{ if eq $kind "keynote" }} <span class="icat-chip icat-chip-strong">Keynote</span>{{ end }}{{ if eq $kind "panel" }} <span class="icat-chip">Panel</span>{{ end }}{{ if eq $kind "break" }} <span class="icat-chip">Break</span>{{ end }}</h4>
 {{ if or $speaker $room }}<div class="icat-timeline-meta">{{ if $speaker }}<i class="bi bi-person"></i> {{ $speaker }}{{ end }}{{ if and $speaker $room }}<span class="icat-dot">·</span>{{ end }}{{ if $room }}<i class="bi bi-geo-alt"></i> {{ $room }}{{ end }}</div>{{ end }}
 {{ if .Inner }}<div class="icat-timeline-body">{{ .Inner }}</div>{{ end }}
 </div>
