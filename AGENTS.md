@@ -1,198 +1,202 @@
 # AGENTS.md — ICAT Conference Sites
 
-Two Hugo static-site projects replacing the legacy PHP CMS that lived at
-`html/2023/` and `html/2025/`. Both sites serve the ICAT (International
-Conference on Information, Communication and Automation Technologies)
-conference site for their respective years.
+Three Hugo projects in one repository, deployed together as one site.
+
+| Edition | Source | Stack | Content model |
+|---------|--------|-------|---------------|
+| ICAT 2023 | `2023/` | Hugo, Bootstrap 4 | markdown pages plus shortcodes |
+| ICAT 2025 | `2025/` | Hugo, Bootstrap 4 | markdown pages plus shortcodes |
+| ICAT 2027 | `2027/` | Hugo, Bootstrap 5 | repeated records in `data/*.yaml`, prose in markdown |
+
+2023 and 2025 were converted from the old PHP CMS and are frozen: they are
+archive copies of past editions. New work happens in `2027/`.
 
 ---
 
-## Repository Layout
+## Repository layout
 
 ```
-html-hugo/
-├── AGENTS.md                       # this file
-├── 2023/                           # ICAT 2023 Hugo site
+.
+├── 2023/                     ICAT 2023 Hugo project
+├── 2025/                     ICAT 2025 Hugo project
+├── 2027/                     ICAT 2027 Hugo project (current)
 │   ├── hugo.toml
-│   ├── content/                    # markdown pages (headless news.md is included via shortcode)
+│   ├── content/              one markdown file per page
+│   │   └── keynotes/         one file per speaker, each gets its own page
+│   ├── data/                 YAML records (2027 only)
 │   ├── layouts/
-│   │   ├── baseof.html             # page skeleton (head + nav + content + footer)
-│   │   ├── _default/               # single.html, list.html (both just render .Content)
-│   │   ├── partials/               # head.html, nav.html, footer.html
-│   │   ├── news/                   # news-section.html layout for /news.md
-│   │   ├── _shortcodes/            # keynote, session, news-item, deadline, deadline-card, committee-section
-│   │   └── 404.html
-│   ├── static/                     # images/, docs/, style/icat-style.css + bootstrap-4.6.1
-│   └── flatten.sh                  # post-build script (see Build Workflow)
-├── 2025/                           # ICAT 2025 Hugo site — same structure, year-specific content
-│   ├── hugo.toml
-│   ├── content/
-│   ├── layouts/
-│   └── static/
-└── html/                           # production export (built output)
-    ├── 2023/                       # = hugo build of 2023/
-    └── 2025/                       # = hugo build of 2025/
+│   │   ├── baseof.html
+│   │   ├── index.html        home page
+│   │   ├── 404.html
+│   │   ├── keynotes/         list and single layouts for speakers
+│   │   ├── _default/single.html
+│   │   ├── partials/         navbar, footer, cards, relative-link helpers
+│   │   └── shortcodes/
+│   ├── static/               css/, js/, images/, vendored Bootstrap 5
+│   └── flatten.sh            post-build step
+├── deploy/                   files copied to the root of the published site
+│   ├── index.html            redirects / to /2027/
+│   ├── 404.html              uses a __BASE__ placeholder, filled by CI
+│   └── robots.txt
+├── .github/workflows/        GitHub Pages deployment
+├── Makefile
+├── README.md
+└── AGENTS.md
 ```
 
 ---
 
-## Build Workflow
+## Requirements and build
 
-Both sites use Hugo 0.162.1+extended. Each produces a flat `.html` output
-(matches old PHP URL pattern). Because Hugo 0.144+ emits `content/index.html`
-inside subdirectories even when the permalink ends in `.html`, a post-build
-flatten script moves those index files up one level.
-
-To build a site:
+Hugo 0.165.0 extended. Nothing else — no Node, no npm.
 
 ```bash
-cd html-hugo/2023            # or 2025
-hugo --minify --destination ../html/2023
-bash flatten.sh ../html/2023
+make build          # 2023, 2025 and 2027
+make build-2027     # one edition
 ```
 
-`flatten.sh` walks the output dir and for every `<name>.html/index.html`
-moves it to `<name>.html` and removes the empty directory. Without it the
-URL `/calls.html` would actually serve `calls.html/index.html`.
+Each build writes to `html/<year>/`. **That directory is not committed**; it is
+rebuilt by CI on every push. `make clean` removes it.
+
+`flatten.sh` is mandatory and runs automatically in the Makefile. Hugo 0.144+
+emits `<name>.html/index.html` even when the permalink ends in `.html`, so the
+script moves those up one level, at any depth.
+
+The Makefile prefix is `hugo`, so a Hugo binary must be on `PATH`.
 
 ---
 
-## URL & Path Conventions
+## Deploy
 
-- All internal links are **path-relative with no leading slash**
-  (`href="calls.html"`, `src="style/icat-style.css"`).
-- This is so the site works opened directly as `file://` *or* served.
-- Static assets live under Hugo `static/` (served from site root).
-- Bootstrap 4.6.1 is the only CSS framework; no JS frameworks beyond jQuery
-  (slim) bundled with Bootstrap.
+Pushing to `main` runs `.github/workflows/pages.yml`:
 
-When editing content or layouts:
+1. builds the three editions with `--baseURL` taken from
+   `actions/configure-pages`, so nothing needs editing when the domain changes;
+2. copies `deploy/` over the build, substituting `__BASE__` in `404.html`;
+3. uploads the `dist/` artifact and publishes it with GitHub Pages.
 
-- Internal page links use `foo.html` (not `/foo/`, not `/foo.html`).
-- Image / doc / CSS / JS references use `images/foo.png`, `docs/foo.pdf`,
-  `style/...` — relative to the page.
-- Do **not** use `relURL`, `absURL`, or any helper that injects
-  `baseURL`. The sites must preview correctly without a server.
-
----
-
-## Permalinks & Front Matter
-
-`hugo.toml` sets:
-
-```toml
-[permalinks.page]
-  "/**" = "/:contentbasename.html"
+```
+/            redirects to /2027/
+/2023/       ICAT 2023
+/2025/       ICAT 2025
+/2027/       ICAT 2027
 ```
 
-This produces `content/calls.md` → `/calls.html` (flat). Combined with
-`flatten.sh` the output directory mirrors the old PHP URL space.
+Pages must be enabled once in the repository settings with **Source: GitHub
+Actions**. `deploy/robots.txt` currently blocks crawlers because the github.io
+copy is a staging site; switch it to `Allow: /` when the real domain goes live.
 
-Front matter is minimal:
+---
 
-```toml
----
-title: "Page Title"
----
+## URL and path conventions
+
+All internal links are **path-relative**. Never a leading slash, never
+`relURL`, never `absURL` — the sites must work from `github.io/<repo>/`, from a
+custom domain, and from `file://`.
+
+```html
+<a href="calls.html">            <!-- same directory -->
+<img src="images/logo.png">
 ```
 
-Special pages:
+Regular pages get a flat URL (`content/about.md` → `/about.html`). Keynote
+detail pages are nested (`content/keynotes/foo.md` → `/keynotes/foo.html`), so
+shared partials cannot hard-code link prefixes.
 
-- `news.md` has `headless: true` and `layout: "news-section"` — Hugo does
-  not emit a standalone `news.html`. It is only rendered through the
-  `{{< news-section >}}` shortcode invoked from `_index.md`.
-- `404.md` has `layout: "404"` for the custom 404.
+Two helpers exist for this and must be used instead of manual `../`:
 
----
+```gotemplate
+{{/* in partials and layouts, . is the page */}}
+{{ $p := partial "rel-prefix.html" . }}
+<a href="{{ $p }}calls.html">...</a>
 
-## Shortcodes (shared pattern across both sites)
+{{/* in shortcodes, . is the shortcode context — pass .Page */}}
+{{ $p := partial "rel-prefix.html" .Page }}
 
-All shortcodes live in `layouts/_shortcodes/<name>.html`. They receive
-parameters either via named arguments (`name="value"`) or via inner
-content (`.Inner`). When a parameter may contain double quotes, escape
-them as `&quot;` in the markdown and pipe through `safeHTML` in the
-template.
-
-Current shortcodes (in `2023/`; mirror to `2025/` when adding new ones):
-
-| Shortcode | Purpose |
-|-----------|---------|
-| `{{< news-item >}}` | News entry on homepage (params: link, title, date, description) |
-| `{{< deadline-card >}}` | Wrapper for a list of `{{< deadline >}}` items |
-| `{{< deadline >}}` | Single dated line in `dates.md` (param: variant = danger/success/warning) |
-| `{{< committee-section >}}` | Heading + `<ul>` of members (params: heading, members separated by `\|`) |
-| `{{< keynote >}}` | Keynote speaker block (params: id, name, photo, talk, title, affiliation, website, email, date, time, room, bio, abstract) |
-| `{{< session >}}` | Panel or workshop block (params: id, title, moderator, participants, date, time, room, abstract, photo, biography) |
-| `{{< news-section >}}` | Wrapper for the news block on homepage (no params; just wraps the news partial) |
-
-When adding a new shortcode:
-
-1. Create `layouts/_shortcodes/<name>.html`.
-2. Use `.Get "param"` for named args and `{{ .Inner }}` for inner content.
-3. If content may contain HTML or escaped entities, pipe through `safeHTML`.
-4. Test that parameters with spaces and quotes work — escape inner quotes
-   as `&quot;` if needed.
+{{/* link to another page from a template */}}
+{{ partial "rel-url.html" (dict "page" $ "target" $item) }}
+```
 
 ---
 
-## CSS Conventions (`static/style/icat-style.css`)
+## Editing the 2027 edition
 
-- Bootstrap 4.6.1 handles all layout, colors, spacing.
-- Custom classes live in `icat-style.css`. Current custom classes:
-  - `.text-shadow` — black 2px shadow on light-on-dark banner text
-  - `.icat-banner` / `.icat-banner-text` — full-bleed banner styling
-  - `.icat-menu` / `.nav-item` / `.dropdown-menu-black` — dark nav with
-    white-on-black inversion on hover
-  - `.speaker-photo` — `max-width: 200px` (used in keynote/panel/workshop
-    images)
-  - `.visa-map` — `width: 90%` (visa policy map image)
-  - `.session-meta` — `font-style: italic` (used in `dates` and `session` shortcode)
+### Where something lives
 
-Do not add new classes without checking the existing list first — many
-"custom-looking" patterns are already Bootstrap utility classes.
+| To change | Edit |
+|-----------|------|
+| Conference dates, city, edition number, email, host | `2027/data/conference.yaml` |
+| Whether the site is in CFP / review / programme / live / past phase | `phase` in `2027/data/conference.yaml` |
+| Whether the Register button is shown | `registrationOpen` in `2027/data/conference.yaml` |
+| Important dates | `2027/data/deadlines.yaml` |
+| News items on the home page | `2027/data/news.yaml` |
+| Committees and TPC | `2027/data/committee.yaml` |
+| The four numbers under "Fifty years of ICAT" | `2027/data/stats.yaml` |
+| Sponsors and technical co-sponsors | `2027/data/sponsors.yaml` |
+| Previous editions and their IEEE Xplore links | `2027/data/editions.yaml` |
+| The "A brief history" timeline | `2027/data/history.yaml` |
+| How many keynotes, news and deadlines the home page shows | `[params.home]` in `2027/hugo.toml` |
+| Home page composition | `2027/content/_index.md` |
+| Text of any inner page | `2027/content/<page>.md` |
+| A keynote speaker | `2027/content/keynotes/<slug>.md` |
+| Navigation structure | `2027/layouts/partials/navbar.html` |
+| Footer | `2027/layouts/partials/footer.html` |
+| Colours, spacing, typography | `2027/static/css/icat-2027.css` (tokens at the top) |
+| Theme toggle, countdown, reveal-on-scroll | `2027/static/js/icat-2027.js` |
 
+### Data files
+
+Every record used on more than one page lives in `2027/data/`. Edit the value
+once; every page that shows it updates.
+
+| File | Shape |
+|------|-------|
+| `conference.yaml` | single object: `year`, `edition`, `startDate`, `endDate`, `dates`, `city`, `hostName`, `phase`, `registrationOpen`, … |
+| `deadlines.yaml` | list of `{label, date, due, variant, note}` |
+| `news.yaml` | list of `{date, title, link, description}`, newest first |
+| `committee.yaml` | `groups:` and `tpc:`, each a list of `{heading, members: [{name, affiliation}]}` |
+| `stats.yaml` | list of `{value, label}` |
+| `sponsors.yaml` | `technical:` and `sponsors:`, each with `enabled`, `heading`, optional `lede` and `note`, and `items: [{name, logo, url}]` |
+| `editions.yaml` | list of `{year, edition, kind, dates, city, url, xplore, archive}` |
+| `history.yaml` | list of `{year, text}`; `text` is markdown |
+
+`due` in `deadlines.yaml` is an ISO date used for sorting and for dimming
+entries that have passed. `date` is what visitors read and may be vaguer.
+
+### Keynotes are pages, not data
+
+Each speaker is a file, because each one needs a biography and an abstract at
+its own URL.
+
+```yaml
+---
+title: Ada Lovelace
+name: Ada Lovelace
+role: Professor
+affiliation: Analytical Engines Institute
+talk: Notes on the Analytical Engine
+weight: 1              # order in the list and on the home page
+photo: images/ada.jpg  # optional
+website: https://example.org   # optional
+email: ada@example.org         # optional
 ---
 
-## Content Authoring Rules
+## Biography
 
-- Each page is its own markdown file in `content/`.
-- Do not embed raw HTML inline unless it's structural (Bootstrap cards,
-  speaker blocks). Use shortcodes where one exists.
-- For repeating structures (committees, news, deadlines, sessions), always
-  use the corresponding shortcode rather than copy-pasting HTML.
-- Internal links between pages use the `.html` form: `[text](calls.html)`.
-- Images and documents live in `static/` and are referenced by relative path:
-  `![alt](images/foo.png)`.
+...
 
----
+## Abstract
 
-## 2027 site: data-driven content
+...
+```
 
-The 2027 project does not keep repeated records in markdown. They live in
-`2027/data/` and are rendered on every page that needs them, so a value is
-edited in one place only.
-
-| File | Holds | Used by |
-|------|-------|---------|
-| `data/conference.yaml` | year, edition, dates, city, host, email, `phase`, `registrationOpen` | header, hero, footer, `<title>`, meta description, JSON-LD |
-| `data/deadlines.yaml` | important dates | home + `/dates.html` |
-| `data/news.yaml` | news items, sorted by date in the template | home |
-| `data/committee.yaml` | `groups:` (committees) and `tpc:` | `/committees.html`, `/tpc_members.html` |
-| `data/sponsors.yaml` | `technical:` and `sponsors:` groups, each with its own `enabled` switch | home |
-| `data/stats.yaml` | the four numbers under "Fifty years of ICAT" | home |
-| `data/editions.yaml` | previous editions: year, ordinal, city, dates, site URL, IEEE Xplore link | `/editions.html` |
-| `data/history.yaml` | the "A brief history" milestones | `/about.html` |
-| `data/deadlines.yaml` | important dates; `due` is the ISO date used for sorting and for marking passed deadlines | home, `/dates.html` |
-
-Keynotes are the exception: each speaker is a file under
-`content/keynotes/` with YAML front matter, because each one gets its own page
-at `/keynotes/<file>.html`. The list page is `content/keynotes/_index.md`
-(`url: /keynotes.html`), rendered by `layouts/keynotes/list.html`.
+The list page is `2027/content/keynotes/_index.md`, which keeps the flat URL
+`/keynotes.html` through `url:` in its front matter.
 
 ### Conference phase
 
-`data/conference.yaml` carries a `phase` field that changes the hero call to
-action, so nothing has to be edited in templates as the deadline approaches:
+`phase` in `conference.yaml` changes the hero button; templates are never
+edited for this.
 
 | phase | hero button |
 |-------|-------------|
@@ -202,65 +206,78 @@ action, so nothing has to be edited in templates as the deadline approaches:
 | `live` | Programme |
 | `past` | Previous editions |
 
-The countdown also handles the states on its own, using `startDate` and
-`endDate`; after the conference it prints "<name> has ended" instead of zeros.
+The countdown reads `startDate` and `endDate` on its own and switches to
+"under way" and "has ended" without a rebuild.
 
-Deadlines carry a `due` date in ISO form next to the display text. Entries
-whose `due` has passed are dimmed and struck through automatically.
+### Shortcodes in use
 
-How many items the home page shows is set in `hugo.toml`:
+| Shortcode | Purpose |
+|-----------|---------|
+| `{{< hero >}}` | The home page hero, driven entirely by `conference.yaml` |
+| `{{< section >}}` | Section wrapper: eyebrow, heading, lede, `alt="true"` for the tinted background |
+| `{{< card >}}` | One card in the "Beyond the main track" row |
+| `{{< keynotes-preview >}}` | First N speakers from `content/keynotes/` |
+| `{{< news-list >}}` | News from `data/news.yaml` |
+| `{{< deadlines >}}` | Dates from `data/deadlines.yaml`; `all="true"` ignores the home limit |
+| `{{< committee-list group="groups" >}}` | Committee block; `group="tpc"` for the TPC page |
+| `{{< timeline-item >}}` | One row of the schedule |
+| `{{< panel >}}` | Round-table block |
+| `{{< stats >}}` | Numbers from `data/stats.yaml` |
+| `{{< sponsors-section >}}` | Both sponsor groups, each behind its own switch |
+| `{{< organizers >}}` | "Organized by" band |
+| `{{< edition-list >}}` | The table on `/editions.html` |
+| `{{< history >}}` | The timeline on `/about.html` |
 
-```toml
-[params.home]
-  keynotes = 3
-  news = 5
-  deadlines = 6
+Shortcode output is markdownified, so a template that starts a line with four
+spaces of indentation will be rendered as a code block. Keep shortcode HTML at
+column 0, as the existing ones do.
+
+---
+
+## Editing the 2023 and 2025 editions
+
+These are archive copies. They use Bootstrap 4.6.1 and a single stylesheet,
+`static/style/icat-style.css`. Content is markdown plus shortcodes in
+`layouts/shortcodes/`:
+
+| Shortcode | Purpose |
+|-----------|---------|
+| `{{< news-item >}}` | News entry on the home page |
+| `{{< deadline-card >}}` | Wrapper for a list of `{{< deadline >}}` items |
+| `{{< deadline >}}` | One dated line (`variant` = danger/success/warning) |
+| `{{< committee-section >}}` | Heading plus a list of members separated by `\|` |
+| `{{< keynote >}}` | Keynote speaker block |
+| `{{< session >}}` | Panel or workshop block |
+
+Their permalinks are flat (`"/**" = "/:contentbasename.html"`), so new pages in
+those editions also live at the site root.
+
+---
+
+## Checks
+
+```bash
+make check
 ```
 
-Shortcodes in use: `hero`, `section`, `card`, `keynotes-preview`, `news-list`,
-`deadlines`, `committee-list`, `sponsor-grid`, `countdown`, `timeline-item`,
-`panel`, `register-cta`.
+Verifies the built output has no PHP, no unrendered template syntax, and no
+leaked `baseURL` prefix. It runs against `html/`, so build first.
 
-### Adding a keynote
+Note that `hugo server` keeps the un-flattened directory layout, which breaks
+the relative links. To see what actually ships, build and serve `html/`:
 
-1. Create `content/keynotes/<slug>.md`.
-2. Fill in `name`, `role`, `affiliation`, `talk`, optional `photo`, `website`,
-   `email`, and `weight` (controls the order).
-3. Put the biography and abstract in the body under `## Biography` and
-   `## Abstract`.
-
-### Relative links with nested pages
-
-Keynote pages live one directory deep, so shared partials compute a prefix
-with `partial "rel-prefix.html" .` and use it in every `href`/`src`. To link to
-another page from a template use `partial "rel-url.html" (dict "page" $ "target" .)`.
-Never hard-code `../` and never use `relURL`/`absURL` — the sites must keep
-working from any base path.
+```bash
+make build-2027
+cd html && python3 -m http.server 8099
+```
 
 ---
 
-## Editing Workflow
-
-1. Edit markdown in `content/` or shortcodes in `layouts/_shortcodes/`.
-2. Run `hugo --minify --destination ../html/<year>` from the site directory.
-3. Run `bash flatten.sh ../html/<year>` to flatten output.
-4. Open the resulting `.html` file directly with `file://` to verify
-   (no browser preview, no server).
-5. Check that no `<?php` references, no `{{`, no `/2023/` or `/2025/`
-   absolute prefixes appear in the rendered HTML.
-6. Update `html/<year>/` (the production export) — this is what gets
-   uploaded to the actual server.
-
----
-
-## What This Project Explicitly Does Not Have
+## What this project does not have
 
 - No PHP. All server-side logic is gone. Static files only.
-- No database. News, deadlines and committee members live in markdown and
-  YAML data files.
+- No database. Records live in YAML files and markdown.
 - No build pipeline beyond Hugo. No webpack, no PostCSS, no Tailwind.
-- No analytics, no tracking, no JavaScript beyond Bootstrap's bundle.
-- No server-rendered redirects. URL changes are permanent.
-
-If a feature requires PHP or server-side processing, it does not belong
-in this project — push it upstream or redesign.
+- No analytics, no tracking, no JavaScript beyond Bootstrap's bundle and
+  `icat-2027.js`.
+- No server-side redirects. URL changes are permanent.
