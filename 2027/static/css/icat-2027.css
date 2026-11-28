@@ -655,6 +655,26 @@ section.icat-section-alt {
     padding: 0.35em 0.6em;
 }
 
+/* ---------- Blockquotes (used as callouts in markdown) ---------- */
+
+.icat-prose > blockquote {
+    border-left: 3px solid var(--icat-primary);
+    background: var(--icat-surface-2);
+    border-radius: 4px;
+    padding: 1rem 1.3rem;
+    margin-block: 1.75rem;
+    color: var(--icat-text);
+    font-size: 0.95rem;
+}
+
+.icat-prose > blockquote p {
+    margin-bottom: 0;
+}
+
+.icat-prose > blockquote p + p {
+    margin-top: 0.6rem;
+}
+
 /* ---------- Alerts ---------- */
 
 .alert {

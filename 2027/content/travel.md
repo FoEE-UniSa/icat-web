@@ -7,14 +7,14 @@ title: "Travel Information"
 
 Sarajevo International Airport (SJJ) is located just 12 km from the city centre and is connected to many European cities through hubs such as Istanbul, Vienna, Munich, Zagreb and Belgrade. Low-cost carriers also serve Tuzla and Mostar airports, both roughly a two-hour drive from Sarajevo.
 
-- Airport website: <a href="https://www.sarajevo-airport.ba/?lang=eng">sarajevo-airport.ba</a>
-- Flight search: <a href="http://www.google.com/flights/">google.com/flights</a>, <a href="https://www.skyscanner.net/">skyscanner.net</a>, <a href="http://www.edreams.co.uk/">edreams.co.uk</a>
+- Airport website: [sarajevo-airport.ba](https://www.sarajevo-airport.ba/?lang=eng)
+- Flight search: [google.com/flights](http://www.google.com/flights/), [skyscanner.net](https://www.skyscanner.net/), [edreams.co.uk](http://www.edreams.co.uk/)
 
 ## By bus
 
 Sarajevo is connected to many European cities by direct bus lines. Centrotrans Eurolines connects Sarajevo with Austria, Belgium, Montenegro, Denmark, France, the Netherlands, Croatia, Germany, Slovenia and Serbia. Companies such as Biss Tours and Globtour also offer direct lines from many European cities.
 
-- Bus station: <a href="http://www.autobusni-kolodvor.com/en/default.aspx">autobusni-kolodvor.com</a>
+- Bus station: [autobusni-kolodvor.com](http://www.autobusni-kolodvor.com/en/default.aspx)
 
 ## By train
 

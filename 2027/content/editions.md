@@ -5,6 +5,6 @@ title: "Previous editions"
 
 {{< edition-list >}}
 
-<p class="small mt-4">Earlier editions were published under the names <em>Informatika Jahorina</em> and <em>International Symposium on Information and Communication Technologies</em>. No online record of them survives.</p>
+Earlier editions were published under the names *Informatika Jahorina* and *International Symposium on Information and Communication Technologies*. No online record of them survives.
 
 {{< /section >}}

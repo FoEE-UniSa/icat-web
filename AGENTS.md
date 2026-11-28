@@ -121,6 +121,10 @@ Two helpers exist for this and must be used instead of manual `../`:
 
 ## Editing the 2027 edition
 
+Page bodies are plain markdown. Raw HTML is only for what markdown cannot
+express: buttons in `calls.md` and `submissions.md`, and the composition of the
+home page. Callouts are blockquotes and are styled as such.
+
 ### Where something lives
 
 | To change | Edit |
