@@ -2,7 +2,6 @@
 # Used by the header, hero, footer, page titles and structured data.
 
 year: 2027
-edition: 31
 editionLabel: "31st"
 
 name: "International Conference on Information, Communication and Automation Technologies"
@@ -14,7 +13,6 @@ dates: "13–15 October 2027"
 
 city: "Sarajevo, Bosnia and Herzegovina"
 cityShort: "Sarajevo, BiH"
-country: "Bosnia and Herzegovina"
 hostName: "Faculty of Electrical Engineering"
 hostParent: "University of Sarajevo"
 hostUrl: "http://www.etf.unsa.ba"
