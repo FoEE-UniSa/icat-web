@@ -3,7 +3,7 @@ title: "About"
 ---
 {{< section id="about" eyebrow="About the conference" heading="A legacy of more than fifty years" lede="ICAT is the longest-running scientific conference in Bosnia and Herzegovina and one of the oldest in South-East Europe in its field." >}}
 
-The Organizing and Program Committees of ICAT 2027 welcome professionals from academia, research and industry across Europe, Asia, the Americas, Africa and Australia to the 31st International Conference on Information, Communication and Automation Technologies. While many conferences have moved online, ICAT stays physical: people present results, exchange ideas, and start collaborations that outlast the conference week.
+The [Organizing and Program Committees](committees.html) of ICAT 2027 welcome professionals from academia, research and industry across Europe, Asia, the Americas, Africa and Australia to the 31st International Conference on Information, Communication and Automation Technologies. While many conferences have moved online, ICAT stays physical: people present results, exchange ideas, and start collaborations that outlast the conference week.
 
 ## A brief history
 

@@ -30,7 +30,7 @@
   date: September 2027
   due: "2027-09-30"
   variant: danger
-  note: At least one author per paper must register.
+  note: At least one author per paper must [register](registration.html).
 
 - label: Conference opens
   date: 13–15 October 2027

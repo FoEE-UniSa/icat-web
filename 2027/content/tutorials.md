@@ -7,7 +7,7 @@ ICAT 2027 tutorials are half-day, in-depth sessions designed to give attendees a
 
 ## Format
 
-Each tutorial is **three hours**, divided into two parts with a short break. Presenters are encouraged to combine exposition with hands-on material (code notebooks, data sets, or exercises) that attendees can take away. Tutorial-only registration is available at a reduced fee; combined tutorial + main conference registration is also offered.
+Each tutorial is **three hours**, divided into two parts with a short break. Presenters are encouraged to combine exposition with hands-on material (code notebooks, data sets, or exercises) that attendees can take away. Tutorial-only [registration](registration.html) is available at a reduced fee; combined tutorial + main conference registration is also offered.
 
 ## Proposed tutorial tracks
 

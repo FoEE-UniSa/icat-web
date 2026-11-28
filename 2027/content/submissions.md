@@ -22,11 +22,11 @@ Authors are expected to submit only their own original work that is not currentl
 
 ## Camera-Ready Manuscript Submission
 
-Final versions of accepted papers must be uploaded to the conference submission system ([EDAS](https://edas.info/)) for inclusion in the conference proceedings and to be submitted to IEEE Xplore®. **The deadline is August 2027 (hard deadline).**
+Final versions of accepted papers must be uploaded to the conference submission system ([EDAS](https://edas.info/)) for inclusion in the conference proceedings and to be submitted to IEEE Xplore®. **The deadline is [August 2027](dates.html) (hard deadline).**
 
 IEEE maintains strict formatting standards for all manuscripts published in the IEEE Xplore® Digital Library.
 
-**Registration is required for all participants of ICAT 2027.**
+**[Registration](registration.html) is required for all participants of ICAT 2027.**
 
 Below are the instructions to submit the camera-ready manuscript.
 

@@ -25,4 +25,6 @@ Most of the city's attractions lie in and around the Old Town (Baščaršija), e
 
 The currency is the Convertible Mark (BAM, locally KM). Notes come in denominations of 10, 20, 50, 100 and 200 KM. The exchange rate is fixed to the Euro: **1.95583 BAM = 1 EUR**. Exchange at banks, exchange offices, or post offices.
 
+See [travel information](travel.html) and [visa information](visas.html).
+
 {{< /section >}}

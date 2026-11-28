@@ -24,4 +24,6 @@ Rail travel is a suitable and safe option for low-budget travellers. Sarajevo is
 
 Bosnia and Herzegovina is steadily developing its highway network. Speed limits: 50–60 km/h within city limits, 80 km/h on open roads, 120 km/h on highways. Drive carefully on regional roads; they are beautiful and winding.
 
+Entry requirements are on the [visa page](visas.html).
+
 {{< /section >}}

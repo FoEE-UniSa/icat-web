@@ -5,4 +5,6 @@ title: "Important Dates"
 
 {{< deadlines all="true" >}}
 
+Submission requirements are on the [submission guidelines](submissions.html).
+
 {{< /section >}}

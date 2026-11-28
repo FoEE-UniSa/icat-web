@@ -39,7 +39,7 @@ Standard IEEE conference templates and detailed formatting guidelines are availa
 
 Papers must be submitted through the online submission system, PDF only. All manuscripts are checked for originality against major publication databases.
 
-> **Single-blind review.** Reviewers know the authors' identities; authors do not know the reviewers'. Each submission is reviewed by the Technical Programme Committee and additional reviewers.
+> **Single-blind review.** Reviewers know the authors' identities; authors do not know the reviewers'. Each submission is reviewed by the [Technical Programme Committee](tpc_members.html) and additional reviewers.
 
 <div class="text-center mt-5">
 <a href="#" class="btn btn-primary btn-lg disabled"><i class="bi bi-cloud-upload"></i> Submission system, opens January 2027</a>

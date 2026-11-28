@@ -7,7 +7,7 @@ Workshops for ICAT 2027 will be held on the afternoon of the first conference da
 
 ## Tentative workshop themes
 
-The following themes are being considered. Additional workshop topics are welcome; please submit a proposal via the Call for Papers page.
+The following themes are being considered. Additional workshop topics are welcome; please submit a proposal via the [Call for Papers page](calls.html).
 
 - **AI in critical infrastructure**: failure prediction and resilience in power grids, water networks, and transport
 - **Edge ML and TinyML**: running machine learning on constrained devices, deployment patterns, hardware/software co-design
